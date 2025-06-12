@@ -83,10 +83,11 @@ async function getFaculty(): Promise<FacultyData> {
   }
 }
 
-export default async function FacultyPage({ searchParams }: { searchParams: { tab?: string } }) {
+export default async function FacultyPage({ searchParams }: { searchParams: { stream?: string } }) {
   const { teaching, nonTeaching } = await getFaculty()
-  const activeTab = searchParams.tab || 'teaching'
-
+  // Use the 'stream' property directly to determine the active tab  
+  const activeTab = searchParams.stream || 'teaching'
+  
   // Display faculty based on active tab without passing defaultTab prop
   const facultyToShow = activeTab === 'non-teaching' ? nonTeaching : teaching
   const title = activeTab === 'non-teaching' ? 'Non-Teaching Faculty' : 'Teaching Faculty'

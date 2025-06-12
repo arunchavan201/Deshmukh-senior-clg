@@ -1,81 +1,129 @@
 import Image from "next/image"
 import Link from "next/link"
-import { Eye } from "lucide-react"
+import { Target, GraduationCap, Users, BookOpen } from "lucide-react"
 
 export default function InstituteHighlights() {
   return (
-    <section className="py-16 bg-white">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Top grid: left (welcome/quote), right (about/city/btn) */}
-        <div className="grid md:grid-cols-2 gap-10 mb-12">
-          {/* Left */}
-          <div>
-            <h2 className="text-green-600 text-sm font-semibold mb-4 tracking-widest uppercase">
-              WELCOME TO DESHMUKH COLLEGE OF PHARMACY
-            </h2>
-            <h1 className="text-3xl sm:text-3xl md:text-3xl font-extrabold text-blue-900 mb-6 leading-tight ml-1">
-              “Empowering Pharmacy Education for a Better Tomorrow”
-            </h1>
-            <p className="text-gray-600 text-lg mb-0">
-              Rahemaniya Taleemi Society, Nilanga’s Deshmukh College of Pharmacy (D.Pharmacy) is committed to fostering academic excellence and professional ethics. 
-              Located in Kasar Sirsi, Nilanga, Dist. Latur, our institute offers top-tier education with recognition from PCI (Code: 8281), and affiliation under DTE (Code: 2636) and MSBTE (Code: 52343). 
-              Our mission is to shape competent and compassionate healthcare professionals who serve the community with dedication.
-            </p>
+    <section className="py-20 bg-gradient-to-b from-white to-slate-50">
+      <div className="container mx-auto px-6 lg:px-8">
+        {/* Header Section */}
+        <div className="text-center mb-16">
+          <div className="inline-flex items-center px-4 py-2 bg-indigo-100 text-indigo-700 rounded-full font-medium text-sm mb-4">
+            <GraduationCap className="w-4 h-4 mr-2" />
+            About Our College
           </div>
+          <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+            Nurturing Excellence in
+            <span className="bg-gradient-to-r from-indigo-600 to-teal-500 bg-clip-text text-transparent"> Education</span>
+          </h2>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            Deshmukh Senior College stands as a beacon of quality education, affiliated with 
+            Swami Ramanand Teerth Marathwada University, Nanded, offering comprehensive programs 
+            in Arts, Commerce, and Science.
+          </p>
+        </div>
 
-          {/* Right */}
-          <div className="flex flex-col justify-between h-full">
-            <div>
-              <p className="text-gray-600 text-lg mb-4">
-                Our campus offers a conducive learning atmosphere, equipped with modern facilities and located within reach of major cities like Latur. 
-                We emphasize quality education through a curriculum designed to meet global pharmacy standards.
-              </p>
-              <p className="text-gray-600 text-lg mb-6">
-                Students are guided by experienced faculty and benefit from excellent infrastructure that supports both academic and co-curricular growth.
+        {/* Main Content Grid */}
+        <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
+          {/* Left Content */}
+          <div className="space-y-8">
+            <div className="bg-white rounded-2xl p-8 shadow-lg border border-slate-100 hover:shadow-xl transition-all duration-300">
+              <div className="flex items-center mb-4">
+                <div className="w-12 h-12 bg-gradient-to-br from-indigo-500 to-teal-500 rounded-lg flex items-center justify-center">
+                  <BookOpen className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 ml-4">Academic Excellence</h3>
+              </div>
+              <p className="text-gray-600 leading-relaxed">
+                Our comprehensive curriculum in Arts, Commerce, and Science is designed to meet 
+                modern educational standards while preserving traditional academic values. 
+                We focus on holistic development through innovative teaching methodologies.
               </p>
             </div>
-            <Link href="/about" className="inline-block w-fit">
-              <button className="bg-green-500 hover:bg-green-600 text-white font-semibold px-8 py-3 rounded transition text-base">
-                READ MORE
-              </button>
-            </Link>
+
+            <div className="bg-white rounded-2xl p-8 shadow-lg border border-slate-100 hover:shadow-xl transition-all duration-300">
+              <div className="flex items-center mb-4">
+                <div className="w-12 h-12 bg-gradient-to-br from-teal-500 to-indigo-500 rounded-lg flex items-center justify-center">
+                  <Users className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 ml-4">Expert Faculty</h3>
+              </div>
+              <p className="text-gray-600 leading-relaxed">
+                Our dedicated faculty members bring years of academic and industry experience, 
+                providing students with practical knowledge and theoretical foundations that 
+                prepare them for successful careers and higher education.
+              </p>
+            </div>
+          </div>
+
+          {/* Right Image */}
+          <div className="relative">
+            <div className="relative h-96 rounded-2xl overflow-hidden shadow-2xl">
+              <Image
+                src="/student.jpg"
+                alt="Students at Deshmukh Senior College"
+                fill
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+            </div>
+            {/* Floating card */}
+            <div className="absolute -bottom-8 -left-8 bg-white rounded-xl p-6 shadow-2xl border border-slate-100">
+              <div className="flex items-center space-x-4">
+                <div className="w-12 h-12 bg-gradient-to-br from-indigo-500 to-teal-500 rounded-full flex items-center justify-center">
+                  <span className="text-white font-bold text-lg">15+</span>
+                </div>
+                <div>
+                  <p className="font-semibold text-gray-900">Years of Excellence</p>
+                  <p className="text-sm text-gray-600">Serving the community</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
-        {/* Bottom grid: two images and vision card */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {/* Image 1 */}
-          <div className="aspect-[4/3] rounded overflow-hidden">
-            <Image
-              src="/student.jpg"
-              alt="Students"
-              width={600}
-              height={450}
-              className="object-cover w-full h-full"
-            />
-          </div>
-
-          {/* Image 2 */}
-          <div className="aspect-[4/3] rounded overflow-hidden">
-            <Image
-              src="/lab.jpg"
-              alt="Lab"
-              width={600}
-              height={450}
-              className="object-cover w-full h-full"
-            />
-          </div>
-
+        {/* Vision & Mission Cards */}
+        <div className="grid md:grid-cols-2 gap-8">
           {/* Vision Card */}
-          <div className="rounded-lg p-6 flex flex-col justify-center bg-gradient-to-br from-blue-900 to-green-500 text-white shadow-lg">
-            <div className="flex items-center gap-3 mb-4">
-              <Eye className="h-7 w-7 text-white" />
-              <span className="text-2xl font-bold">Vision</span>
+          <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-indigo-600 to-indigo-800 p-8 text-white shadow-2xl">
+            <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -translate-y-16 translate-x-16" />
+            <div className="relative z-10">
+              <div className="flex items-center mb-6">
+                <Target className="h-8 w-8 mr-4" />
+                <h3 className="text-2xl font-bold">Our Vision</h3>
+              </div>
+              <p className="text-indigo-100 leading-relaxed text-lg">
+                To be a premier educational institution that transforms students into well-rounded 
+                individuals, equipped with knowledge, skills, and values to contribute meaningfully 
+                to society and excel in their chosen fields.
+              </p>
             </div>
-            <p className="text-base sm:text-lg">
-              To provide quality pharmacy education that transforms students into competent healthcare professionals, equipped with knowledge, skills, and ethical values to serve society and contribute to the advancement of pharmaceutical sciences.
-            </p>
           </div>
+
+          {/* Mission Card */}
+          <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-teal-600 to-teal-800 p-8 text-white shadow-2xl">
+            <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -translate-y-16 translate-x-16" />
+            <div className="relative z-10">
+              <div className="flex items-center mb-6">
+                <GraduationCap className="h-8 w-8 mr-4" />
+                <h3 className="text-2xl font-bold">Our Mission</h3>
+              </div>
+              <p className="text-teal-100 leading-relaxed text-lg">
+                To provide quality education that nurtures critical thinking, creativity, and 
+                character development while fostering an inclusive learning environment that 
+                prepares students for academic and professional success.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* CTA Button */}
+        <div className="text-center mt-12">
+          <Link href="/about">
+            <button className="bg-gradient-to-r from-indigo-600 to-teal-600 hover:from-indigo-700 hover:to-teal-700 text-white font-semibold px-8 py-4 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1">
+              Learn More About Us
+            </button>
+          </Link>
         </div>
       </div>
     </section>

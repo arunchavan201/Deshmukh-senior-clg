@@ -4,32 +4,32 @@ import { useState, useEffect } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { ChevronLeft, ChevronRight } from "lucide-react"
+import { ChevronLeft, ChevronRight, BookOpen, Users, Award } from "lucide-react"
 
 const slides = [
 	{
 		id: 1,
 		image: "/image2.png?height=600&width=1200",
-		title: "Shaping the Future of Fashion Design",
-		description: "Discover your creative potential with our industry-leading programs",
-		cta: "Explore Programs",
-		link: "/academics/programs",
+		title: "Excellence in Arts Education",
+		description: "Discover the world of literature, philosophy, and creative expression",
+		cta: "Explore Arts",
+		link: "/academics/arts",
 	},
 	{
 		id: 2,
 		image: "/image2.png?height=600&width=1200",
-		title: "Learn from Industry Experts",
-		description: "Our faculty brings years of professional experience to the classroom",
-		cta: "Meet Our Faculty",
-		link: "/academics/faculty",
+		title: "Commerce & Business Studies",
+		description: "Build your foundation in commerce, economics, and business management",
+		cta: "View Commerce",
+		link: "/academics/commerce",
 	},
 	{
 		id: 3,
 		image: "/image2.png?height=600&width=1200",
-		title: "State-of-the-Art Facilities",
-		description: "Access to modern design studios and cutting-edge technology",
-		cta: "View Facilities",
-		link: "/facilities",
+		title: "Scientific Innovation",
+		description: "Explore the frontiers of science with modern laboratories and research",
+		cta: "Discover Science",
+		link: "/academics/science",
 	},
 ]
 
@@ -52,104 +52,120 @@ export default function HeroBanner() {
 	}, [])
 
 	return (
-		<section className="w-full flex flex-col md:flex-row h-auto">
-			{/* Left static part with background image and overlay */}
-			<div className="w-full md:w-1/2 relative flex items-center justify-center min-h-[300px] md:min-h-[500px]">
-				{/* Background image */}
-				<Image
-					src="/image2.png?height=600&width=1200"
-					alt="Background"
-					fill
-					className="object-cover z-0"
-					priority
-				/>
-				{/* Overlay */}
-				<div className="absolute inset-0 bg-blue-900/90 z-10" />
-				{/* Centered content */}
-				<div className="relative z-20 flex flex-col items-center justify-center text-center w-full h-full px-4 sm:px-8 py-8 md:py-12 text-white">
-					<div className="mb-2">
-						{/* <span className="block text-xs sm:text-sm md:text-base text-blue-400 font-semibold tracking-widest">
-              Inspiring Creativity, Empowering Futures
-            </span> */}
-					</div>
-					<h2 className="text-green-400 text-xs sm:text-sm md:text-base font-semibold mb-4 md:mb-6 tracking-widest">
-						WELCOME TO DESHMUKH COLLEGE OF PHARMACY
-					</h2>
-					<h1 className="text-[2rem] sm:text-[2.5rem] md:text-[3.5rem] lg:text-[4rem] xl:text-[4.5rem] font-extrabold mb-6 md:mb-10 leading-[1.1] md:leading-[1.08] tracking-tight">
-						We Provide High
-						<br />
-						Quality{" "}
-						<span className="underline decoration-green-400 decoration-[6px] underline-offset-[10px]">
-							Education
-						</span>
-						<br />
-						For Everyone
-					</h1>
-					<p className="mb-8 md:mb-12 text-base sm:text-lg md:text-2xl max-w-2xl text-white/90">
-						The college aims at shaping the bright future of students in a proper
-						wave, because a student is the central figure in the stream of
-						education in the universe.
-					</p>
-					<Button className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 sm:py-3 px-4 sm:px-6 rounded transition w-fit text-sm sm:text-base">
-						GET STARTED
-					</Button>
-				</div>
-			</div>
-			{/* Right slider part */}
-			<div className="w-full md:w-1/2 flex items-stretch relative overflow-hidden">
-				<div className="relative w-full h-[220px] sm:h-[300px] md:h-[500px] flex-1">
-					<Image
-						src={slides[currentSlide].image}
-						alt={slides[currentSlide].title}
-						fill
-						className="object-cover transition-all duration-700"
-						priority
-					/>
-					<div className="absolute inset-0 bg-black/40" />
-					<div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white p-2 sm:p-4">
-						<h1 className="text-lg sm:text-2xl md:text-3xl font-bold mb-2 sm:mb-4 max-w-2xl">
-							{slides[currentSlide].title}
+		<section className="w-full bg-gradient-to-br from-indigo-50 via-white to-teal-50 relative overflow-hidden">
+			{/* Background decoration */}
+			<div className="absolute inset-0 bg-gradient-to-br from-indigo-100/20 to-teal-100/20" />
+			<div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-indigo-200/30 to-transparent rounded-full blur-3xl" />
+			<div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-teal-200/30 to-transparent rounded-full blur-3xl" />
+			
+			<div className="relative z-10 flex flex-col lg:flex-row min-h-[80vh]">
+				{/* Left content section */}
+				<div className="w-full lg:w-3/5 flex items-center justify-center px-6 sm:px-12 py-16 lg:py-24">
+					<div className="max-w-2xl text-center lg:text-left">
+						{/* Badge */}
+						<div className="inline-flex items-center px-4 py-2 bg-white/80 backdrop-blur-sm border border-indigo-200/50 rounded-full text-indigo-600 text-sm font-medium mb-6 shadow-lg">
+							<Award className="w-4 h-4 mr-2" />
+							SRTMU Affiliated College
+						</div>
+						
+						{/* Main heading */}
+						<h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+							<span className="bg-gradient-to-r from-indigo-600 to-teal-500 bg-clip-text text-transparent">
+								Deshmukh
+							</span>
+							<br />
+							Senior College
 						</h1>
-						<p className="text-sm sm:text-base md:text-lg mb-4 sm:mb-8 max-w-xl">
-							{slides[currentSlide].description}
+						
+						{/* Subtitle */}
+						<div className="flex items-center justify-center lg:justify-start gap-2 mb-6">
+							<div className="w-12 h-0.5 bg-gradient-to-r from-indigo-500 to-teal-500" />
+							<span className="text-gray-600 font-medium">Arts • Commerce • Science</span>
+							<div className="w-12 h-0.5 bg-gradient-to-r from-teal-500 to-indigo-500" />
+						</div>
+						
+						{/* Description */}
+						<p className="text-lg text-gray-600 mb-8 leading-relaxed">
+							Empowering minds through quality education in Arts, Commerce, and Science. 
+							Located in Kasarsirsi, we are committed to nurturing tomorrow's leaders with 
+							academic excellence and holistic development.
 						</p>
-						<Button
-							asChild
-							size="lg"
-							className="bg-blue-600 hover:bg-blue-700 text-xs sm:text-base"
-						>
-							<Link href={slides[currentSlide].link}>
-								{slides[currentSlide].cta}
-							</Link>
-						</Button>
+						
+						{/* Action buttons */}
+						<div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+							<Button className="bg-gradient-to-r from-indigo-600 to-indigo-700 hover:from-indigo-700 hover:to-indigo-800 text-white px-8 py-6 rounded-xl font-semibold text-base shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-0.5">
+								<BookOpen className="w-5 h-5 mr-2" />
+								Explore Programs
+							</Button>
+							<Button variant="outline" className="border-2 border-indigo-200 text-indigo-700 hover:bg-indigo-50 px-8 py-6 rounded-xl font-semibold text-base transition-all duration-300 hover:shadow-lg">
+								<Users className="w-5 h-5 mr-2" />
+								Virtual Tour
+							</Button>
+						</div>
 					</div>
-					{/* Navigation arrows */}
-					<button
-						onClick={prevSlide}
-						className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white p-1 sm:p-2 rounded-full"
-						aria-label="Previous slide"
-					>
-						<ChevronLeft className="h-5 w-5 sm:h-6 sm:w-6" />
-					</button>
-					<button
-						onClick={nextSlide}
-						className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white p-1 sm:p-2 rounded-full"
-						aria-label="Next slide"
-					>
-						<ChevronRight className="h-5 w-5 sm:h-6 sm:w-6" />
-					</button>
-					{/* Dots */}
-					<div className="absolute bottom-2 sm:bottom-4 left-1/2 -translate-x-1/2 flex space-x-1 sm:space-x-2">
-						{slides.map((_, index) => (
-							<button
-								key={index}
-								onClick={() => setCurrentSlide(index)}
-								className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full ${
-									index === currentSlide ? "bg-white" : "bg-white/50"
-								}`}
-								aria-label={`Go to slide ${index + 1}`}
-							/>
-						))}
+				</div>
+				
+				{/* Right slider section */}
+				<div className="w-full lg:w-2/5 relative">
+					<div className="relative h-[400px] lg:h-full overflow-hidden">
+						{/* Glassmorphic overlay */}
+						<div className="absolute inset-4 bg-white/20 backdrop-blur-sm border border-white/30 rounded-2xl z-10 shadow-2xl" />
+						
+						<Image
+							src={slides[currentSlide].image}
+							alt={slides[currentSlide].title}
+							fill
+							className="object-cover transition-all duration-700 rounded-2xl"
+							priority
+						/>
+						
+						{/* Content overlay */}
+						<div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent z-20 rounded-2xl" />
+						<div className="absolute bottom-8 left-8 right-8 text-white z-30">
+							<h3 className="text-2xl font-bold mb-3">
+								{slides[currentSlide].title}
+							</h3>
+							<p className="text-white/90 mb-4">
+								{slides[currentSlide].description}
+							</p>
+							<Button
+								asChild
+								className="bg-white/20 backdrop-blur-sm border border-white/30 text-white hover:bg-white/30 transition-all duration-300"
+							>
+								<Link href={slides[currentSlide].link}>
+									{slides[currentSlide].cta}
+								</Link>
+							</Button>
+						</div>
+						
+						{/* Navigation */}
+						<button
+							onClick={prevSlide}
+							className="absolute left-4 top-1/2 -translate-y-1/2 z-30 bg-white/20 backdrop-blur-sm border border-white/30 text-white p-3 rounded-full hover:bg-white/30 transition-all duration-300"
+						>
+							<ChevronLeft className="h-5 w-5" />
+						</button>
+						<button
+							onClick={nextSlide}
+							className="absolute right-4 top-1/2 -translate-y-1/2 z-30 bg-white/20 backdrop-blur-sm border border-white/30 text-white p-3 rounded-full hover:bg-white/30 transition-all duration-300"
+						>
+							<ChevronRight className="h-5 w-5" />
+						</button>
+						
+						{/* Dots */}
+						<div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2 z-30">
+							{slides.map((_, index) => (
+								<button
+									key={index}
+									onClick={() => setCurrentSlide(index)}
+									className={`w-3 h-3 rounded-full transition-all duration-300 ${
+										index === currentSlide 
+											? "bg-white shadow-lg" 
+											: "bg-white/50 hover:bg-white/70"
+									}`}
+								/>
+							))}
+						</div>
 					</div>
 				</div>
 			</div>

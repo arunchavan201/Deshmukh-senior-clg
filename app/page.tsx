@@ -32,7 +32,7 @@ export default async function Home() {
   }
 
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col bg-slate-50">
       <Announcements announcements={announcements} />
       <Banner banners={banners} />
       <HeroBanner />

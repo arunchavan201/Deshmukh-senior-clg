@@ -1,7 +1,7 @@
 import "../lib/react-polyfill" // Import the polyfill first
 import type React from "react"
 import type { Metadata } from "next"
-import { Inter } from "next/font/google"
+import { Inter, Poppins } from "next/font/google"
 import { ThemeProvider } from "@/components/theme-provider"
 import { Toaster } from "@/components/ui/toaster"
 import "./globals.css"
@@ -10,12 +10,17 @@ import Footer from "@/components/layout/footer"
 import PageLayout from "@/components/layout/page-layout"
 
 const inter = Inter({ subsets: ["latin"] })
+const poppins = Poppins({ 
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-poppins"
+})
 
 export const metadata = {
-  title: "Deshmukh College Of Pharmacy",
-  description: "Affiliated to S.N.D.T.W University, Mumbai",
-  keywords: "fashion design, institute, education, design courses, SNDTW University",
-    generator: 'v0.dev'
+  title: "Deshmukh Senior College - Arts, Commerce & Science",
+  description: "Affiliated to Swami Ramanand Teerth Marathwada University, Nanded",
+  keywords: "arts, commerce, science, college, education, university, SRTMU, Nanded",
+  generator: 'v0.dev'
 }
 
 export default function RootLayout({
@@ -24,8 +29,8 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={inter.className}>
+    <html lang="en" suppressHydrationWarning className={`${poppins.variable}`}>
+      <body className={`${inter.className} bg-slate-50 text-gray-800`}>
         <Providers>
           <div className="flex min-h-screen flex-col">
             <PageLayout>
