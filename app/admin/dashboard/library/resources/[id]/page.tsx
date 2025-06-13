@@ -208,7 +208,7 @@ export default function EditLibraryResourcePage() {
                       variant="ghost"
                       size="sm"
                       onClick={() => removeItem(index)}
-                      className="text-blue-500 hover:text-blue-700 hover:bg-blue-50"
+                      className="text-purple-500 hover:text-purple-700 hover:bg-purple-50"
                       disabled={items.length === 1}
                     >
                       <Trash2 className="h-4 w-4" />
@@ -243,7 +243,7 @@ export default function EditLibraryResourcePage() {
             <Button type="button" variant="outline" onClick={() => router.push("/admin/dashboard/library")}>
               Cancel
             </Button>
-            <Button type="submit" className=" bg-blue-600:bg-blue-700" disabled={isSubmitting}>
+            <Button type="submit" className=" bg-purple-600:bg-purple-700" disabled={isSubmitting}>
               {isSubmitting ? "Updating..." : "Update Resource"}
             </Button>
           </CardFooter>

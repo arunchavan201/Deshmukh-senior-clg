@@ -268,7 +268,7 @@ export default function HomeContentPage() {
                           variant="ghost"
                           size="sm"
                           onClick={() => removeSlide(index)}
-                          className="text-blue-500 hover:text-blue-700 hover:bg-blue-50"
+                          className="text-purple-500 hover:text-purple-700 hover:bg-purple-50"
                           disabled={slides.length === 1}
                         >
                           <Trash2 className="h-4 w-4" />
@@ -345,7 +345,7 @@ export default function HomeContentPage() {
                   ))}
 
                   <div className="flex justify-end">
-                    <Button onClick={handleSaveSlides} className=" bg-blue-600:bg-blue-700" disabled={isSaving}>
+                    <Button onClick={handleSaveSlides} className=" bg-purple-600:bg-purple-700" disabled={isSaving}>
                       {isSaving ? "Saving..." : "Save Slides"}
                     </Button>
                   </div>
@@ -353,7 +353,7 @@ export default function HomeContentPage() {
               ) : (
                 <div className="text-center py-8">
                   <p className="text-gray-500">No slides found</p>
-                  <Button onClick={addSlide} className="mt-4  bg-blue-600:bg-blue-700">
+                  <Button onClick={addSlide} className="mt-4  bg-purple-600:bg-purple-700">
                     Add Your First Slide
                   </Button>
                 </div>
@@ -387,7 +387,7 @@ export default function HomeContentPage() {
                           variant="ghost"
                           size="sm"
                           onClick={() => removeHighlight(index)}
-                          className="text-blue-500 hover:text-blue-700 hover:bg-blue-50"
+                          className="text-purple-500 hover:text-purple-700 hover:bg-purple-50"
                           disabled={highlights.length === 1}
                         >
                           <Trash2 className="h-4 w-4" />
@@ -438,7 +438,7 @@ export default function HomeContentPage() {
                   <div className="flex justify-end">
                     <Button
                       onClick={handleSaveHighlights}
-                      className=" bg-blue-600:bg-blue-700"
+                      className=" bg-purple-600:bg-purple-700"
                       disabled={isSaving}
                     >
                       {isSaving ? "Saving..." : "Save Highlights"}
@@ -448,7 +448,7 @@ export default function HomeContentPage() {
               ) : (
                 <div className="text-center py-8">
                   <p className="text-gray-500">No highlights found</p>
-                  <Button onClick={addHighlight} className="mt-4  bg-blue-600:bg-blue-700">
+                  <Button onClick={addHighlight} className="mt-4  bg-purple-600:bg-purple-700">
                     Add Your First Highlight
                   </Button>
                 </div>
@@ -485,7 +485,7 @@ export default function HomeContentPage() {
                         variant="ghost"
                         size="icon"
                         onClick={() => removeReason(index)}
-                        className="text-blue-500 hover:text-blue-700 hover:bg-blue-50"
+                        className="text-purple-500 hover:text-purple-700 hover:bg-purple-50"
                         disabled={reasons.length === 1}
                       >
                         <Trash2 className="h-4 w-4" />
@@ -494,7 +494,7 @@ export default function HomeContentPage() {
                   ))}
 
                   <div className="flex justify-end">
-                    <Button onClick={handleSaveReasons} className=" bg-blue-600:bg-blue-700" disabled={isSaving}>
+                    <Button onClick={handleSaveReasons} className=" bg-purple-600:bg-purple-700" disabled={isSaving}>
                       {isSaving ? "Saving..." : "Save Reasons"}
                     </Button>
                   </div>
@@ -502,7 +502,7 @@ export default function HomeContentPage() {
               ) : (
                 <div className="text-center py-8">
                   <p className="text-gray-500">No reasons found</p>
-                  <Button onClick={addReason} className="mt-4  bg-blue-600:bg-blue-700">
+                  <Button onClick={addReason} className="mt-4  bg-purple-600:bg-purple-700">
                     Add Your First Reason
                   </Button>
                 </div>

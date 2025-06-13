@@ -169,7 +169,7 @@ export default function NewBannerPage() {
             <div className="flex space-x-2">
               <Button 
                 type="submit" 
-                className="bg-blue-600 hover:bg-blue-700"
+                className="bg-purple-600 hover:bg-purple-700"
                 disabled={isUploading}
               >
                 <Upload className="h-4 w-4 mr-2" />

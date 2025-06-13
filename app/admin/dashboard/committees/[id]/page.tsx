@@ -192,7 +192,7 @@ export default function EditCommitteePage() {
                       variant="ghost"
                       size="sm"
                       onClick={() => removeMember(index)}
-                      className="text-blue-500 hover:text-blue-700 hover:bg-blue-50"
+                      className="text-purple-500 hover:text-purple-700 hover:bg-purple-50"
                     >
                       <Trash2 className="h-4 w-4" />
                     </Button>
@@ -247,7 +247,7 @@ export default function EditCommitteePage() {
             <Button type="button" variant="outline" onClick={() => router.push("/admin/dashboard/committees")}>
               Cancel
             </Button>
-            <Button type="submit" className=" bg-blue-600:bg-blue-700" disabled={isSubmitting}>
+            <Button type="submit" className=" bg-purple-600:bg-purple-700" disabled={isSubmitting}>
               {isSubmitting ? "Updating..." : "Update Committee"}
             </Button>
           </CardFooter>

@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Download, FileText } from "lucide-react"
 import { headers } from "next/headers"
+import Image from "next/image"
 
 interface FileMetadata {
   type: string;
@@ -118,6 +119,36 @@ async function getAdmissionContent(): Promise<AdmissionData> {
   }
 }
 
+function SectionHero({ title, bgImage }: { title: string; bgImage?: string }) {
+  return (
+    <div className="relative w-full h-56 md:h-56 flex items-center justify-center overflow-hidden mb-10">
+      {bgImage && (
+        <Image
+          src={bgImage}
+          alt={title}
+          fill
+          className="object-cover"
+          style={{ zIndex: 0 }}
+        />
+      )}
+      <div className="absolute inset-0 z-10 pointer-events-none">
+        <div className="absolute inset-0 bg-gradient-to-br from-purple-800/70 via-teal-600/60 to-purple-400/40" />
+        <div className="absolute -top-10 -left-10 w-48 h-48 bg-purple-400/30 rounded-full blur-2xl" />
+        <div className="absolute top-10 right-0 w-40 h-40 bg-teal-300/30 rounded-full blur-2xl" />
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-96 h-24 bg-white/10 rounded-full blur-3xl" />
+        <svg className="absolute bottom-0 left-0 w-full" height="40" viewBox="0 0 100 10" preserveAspectRatio="none">
+          <polygon points="0,10 100,0 100,10" fill="#F7F9FC" />
+        </svg>
+      </div>
+      <div className="relative z-20 flex flex-col items-center justify-center w-full h-full">
+        <h1 className="text-2xl md:text-4xl font-bold text-white text-center drop-shadow-lg py-8">
+          {title}
+        </h1>
+      </div>
+    </div>
+  )
+}
+
 export default async function AdmissionPage() {
   const { content, files } = await getAdmissionContent()
 
@@ -127,246 +158,248 @@ export default async function AdmissionPage() {
   const admissionInfoFile = files.find((f: FileDocument) => f.metadata.type === "admission-info")
 
   return (
-    <div className="container mx-auto px-4 py-12">
-      <h1 className="text-3xl font-bold text-center mb-12">Admission Information</h1>
+    <>
+      <SectionHero title="Admission Information" bgImage="/header.webp" />
+      <div className="container mx-auto px-4 py-12">
+        <h1 className="text-3xl font-bold text-center mb-12">Admission Information</h1>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-        <Card className="md:col-span-2">
-          <CardContent className="p-6">
-            <h2 className="text-2xl font-bold mb-4">Admission Process 2024-25</h2>
-            <div
-              className="prose max-w-none"
-              dangerouslySetInnerHTML={{ __html: content.process || "Admission process information coming soon..." }}
-            />
-
-            <div className="flex flex-wrap gap-4 mt-6">
-              {brochureFile && (
-                <Button asChild variant="outline" className="flex items-center">
-                  <a href={`/api/files/${brochureFile._id}`} target="_blank" rel="noopener noreferrer">
-                    <FileText className="h-4 w-4 mr-2" />
-                    Download Brochure
-                  </a>
-                </Button>
-              )}
-
-              {admissionFormFile && (
-                <Button asChild className=" bg-blue-600:bg-blue-700 flex items-center">
-                  <a href={`/api/files/${admissionFormFile._id}`} target="_blank" rel="noopener noreferrer">
-                    <Download className="h-4 w-4 mr-2" />
-                    Download Application Form
-                  </a>
-                </Button>
-              )}
-            </div>
-          </CardContent>
-        </Card>
-
-        <Card>
-          <CardContent className="p-6">
-            <h2 className="text-xl font-bold mb-4">Important Dates</h2>
-            <ul className="space-y-3">
-              {content.importantDates ? (
-                <div dangerouslySetInnerHTML={{ __html: content.importantDates }} />
-              ) : (
-                <>
-                  <li className="flex justify-between">
-                    <span className="text-gray-700">Application Start</span>
-                    <span className="font-medium">June 1, 2024</span>
-                  </li>
-                  <li className="flex justify-between">
-                    <span className="text-gray-700">Application Deadline</span>
-                    <span className="font-medium">July 15, 2024</span>
-                  </li>
-                  <li className="flex justify-between">
-                    <span className="text-gray-700">Entrance Exam</span>
-                    <span className="font-medium">July 25, 2024</span>
-                  </li>
-                  <li className="flex justify-between">
-                    <span className="text-gray-700">Result Declaration</span>
-                    <span className="font-medium">August 5, 2024</span>
-                  </li>
-                  <li className="flex justify-between">
-                    <span className="text-gray-700">Counseling Begins</span>
-                    <span className="font-medium">August 10, 2024</span>
-                  </li>
-                  <li className="flex justify-between">
-                    <span className="text-gray-700">Classes Begin</span>
-                    <span className="font-medium">August 25, 2024</span>
-                  </li>
-                </>
-              )}
-            </ul>
-
-            <div className="mt-6 pt-4 border-t">
-              <h3 className="font-semibold mb-2">Contact for Admission</h3>
-              <p className="text-gray-700 mb-1">Phone: +91 9975469123
-, +91 8411 888 588
-</p>
-              <p className="text-gray-700">Email: deshmukhpharmacy2022@gmail.com</p>
-            </div>
-          </CardContent>
-        </Card>
-      </div>
-
-      <Tabs defaultValue="eligibility" className="w-full mb-12">
-        <TabsList className="grid w-full grid-cols-1 md:grid-cols-4">
-          <TabsTrigger value="eligibility">Eligibility Criteria</TabsTrigger>
-          <TabsTrigger value="fee-structure">Fee Structure</TabsTrigger>
-          <TabsTrigger value="scholarship">Scholarship</TabsTrigger>
-          <TabsTrigger value="cancellation">Cancellation Rules</TabsTrigger>
-        </TabsList>
-
-        <TabsContent value="eligibility" className="mt-6">
-          <Card>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+          <Card className="md:col-span-2">
             <CardContent className="p-6">
-              <h2 className="text-xl font-bold mb-4">Eligibility Criteria</h2>
-
-              <div className="overflow-x-auto">
-                <table className="min-w-full bg-white border border-gray-200 rounded-lg">
-                  <thead>
-               
-                  </thead>
-                  <tbody className="divide-y divide-gray-200">
-                    {content.eligibility ? (
-                      <tr>
-                        <td colSpan={3} className="py-4 px-6">
-                          <div dangerouslySetInnerHTML={{ __html: content.eligibility }} />
-                        </td>
-                      </tr>
-                    ) : (
-                      <>
-                        <tr>
-                          <td className="py-3 px-4 whitespace-nowrap">B.A. Fashion Design</td>
-                          <td className="py-3 px-4">10+2 or equivalent from any recognized board</td>
-                          <td className="py-3 px-4">Entrance exam and portfolio review</td>
-                        </tr>
-                        <tr>
-                          <td className="py-3 px-4 whitespace-nowrap">B.Design</td>
-                          <td className="py-3 px-4">
-                            10+2 or equivalent from any recognized board with minimum 50% marks
-                          </td>
-                          <td className="py-3 px-4">Entrance exam, portfolio review, and personal interview</td>
-                        </tr>
-                      </>
-                    )}
-                  </tbody>
-                </table>
-              </div>
-            </CardContent>
-          </Card>
-        </TabsContent>
-
-        <TabsContent value="fee-structure" className="mt-6">
-          <Card>
-            <CardContent className="p-6">
-              <h2 className="text-xl font-bold mb-4">Fee Structure</h2>
-
-              <div className="overflow-x-auto">
-                <table className="min-w-full bg-white border border-gray-200 rounded-lg">
-                  <thead>
-                   
-                  </thead>
-                  <tbody className="divide-y divide-gray-200">
-                    {content.feeStructure ? (
-                      <tr>
-                        <td colSpan={5} className="py-4 px-6">
-                          <div dangerouslySetInnerHTML={{ __html: content.feeStructure }} />
-                        </td>
-                      </tr>
-                    ) : (
-                      <>
-                        <tr>
-                          <td className="py-3 px-4" rowSpan={3}>
-                            B.A. Fashion Design
-                          </td>
-                          <td className="py-3 px-4">General</td>
-                          <td className="py-3 px-4">₹50,000</td>
-                          <td className="py-3 px-4">₹10,000</td>
-                          <td className="py-3 px-4">₹60,000</td>
-                        </tr>
-                        <tr>
-                          <td className="py-3 px-4">OBC</td>
-                          <td className="py-3 px-4">₹45,000</td>
-                          <td className="py-3 px-4">₹10,000</td>
-                          <td className="py-3 px-4">₹55,000</td>
-                        </tr>
-                        <tr>
-                          <td className="py-3 px-4">SC/ST</td>
-                          <td className="py-3 px-4">₹40,000</td>
-                          <td className="py-3 px-4">₹10,000</td>
-                          <td className="py-3 px-4">₹50,000</td>
-                        </tr>
-                        <tr>
-                          <td className="py-3 px-4" rowSpan={3}>
-                            B.Design
-                          </td>
-                          <td className="py-3 px-4">General</td>
-                          <td className="py-3 px-4">₹60,000</td>
-                          <td className="py-3 px-4">₹12,000</td>
-                          <td className="py-3 px-4">₹72,000</td>
-                        </tr>
-                        <tr>
-                          <td className="py-3 px-4">OBC</td>
-                          <td className="py-3 px-4">₹55,000</td>
-                          <td className="py-3 px-4">₹12,000</td>
-                          <td className="py-3 px-4">₹67,000</td>
-                        </tr>
-                        <tr>
-                          <td className="py-3 px-4">SC/ST</td>
-                          <td className="py-3 px-4">₹50,000</td>
-                          <td className="py-3 px-4">₹12,000</td>
-                          <td className="py-3 px-4">₹62,000</td>
-                        </tr>
-                      </>
-                    )}
-                  </tbody>
-                </table>
-              </div>
-
-              <p className="text-sm text-gray-500 mt-4">
-                * Other charges include examination fee, library fee, development fee, etc.
-              </p>
-            </CardContent>
-          </Card>
-        </TabsContent>
-
-        <TabsContent value="scholarship" className="mt-6">
-          <Card>
-            <CardContent className="p-6">
-              <h2 className="text-xl font-bold mb-4">Scholarship Details</h2>
-
-              <div
-                className="prose max-w-none mb-6"
-                dangerouslySetInnerHTML={{
-                  __html:
-                    content.scholarship ||
-                    "The Deshmukh College Of Pharmacy offers various scholarships to meritorious students and those from economically weaker sections. These scholarships are designed to support talented students in pursuing their education without financial constraints.",
-                }}
-              />
-
-              {scholarshipFile && (
-                <Button asChild className=" bg-blue-600:bg-blue-700">
-                  <a href={`/api/files/${scholarshipFile._id}`} target="_blank" rel="noopener noreferrer">
-                    <FileText className="h-4 w-4 mr-2" />
-                    Download Scholarship Details
-                  </a>
-                </Button>
-              )}
-            </CardContent>
-          </Card>
-        </TabsContent>
-
-        <TabsContent value="cancellation" className="mt-6">
-          <Card>
-            <CardContent className="p-6">
-              <h2 className="text-xl font-bold mb-4">Rules for Cancellation</h2>
-
+              <h2 className="text-2xl font-bold mb-4">Admission Process 2024-25</h2>
               <div
                 className="prose max-w-none"
-                dangerouslySetInnerHTML={{
-                  __html:
-                    content.cancellation ||
-                    `
+                dangerouslySetInnerHTML={{ __html: content.process || "Admission process information coming soon..." }}
+              />
+
+              <div className="flex flex-wrap gap-4 mt-6">
+                {brochureFile && (
+                  <Button asChild variant="outline" className="flex items-center">
+                    <a href={`/api/files/${brochureFile._id}`} target="_blank" rel="noopener noreferrer">
+                      <FileText className="h-4 w-4 mr-2" />
+                      Download Brochure
+                    </a>
+                  </Button>
+                )}
+
+                {admissionFormFile && (
+                  <Button asChild className=" bg-purple-600:bg-purple-700 flex items-center">
+                    <a href={`/api/files/${admissionFormFile._id}`} target="_blank" rel="noopener noreferrer">
+                      <Download className="h-4 w-4 mr-2" />
+                      Download Application Form
+                    </a>
+                  </Button>
+                )}
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h2 className="text-xl font-bold mb-4">Important Dates</h2>
+              <ul className="space-y-3">
+                {content.importantDates ? (
+                  <div dangerouslySetInnerHTML={{ __html: content.importantDates }} />
+                ) : (
+                  <>
+                    <li className="flex justify-between">
+                      <span className="text-gray-700">Application Start</span>
+                      <span className="font-medium">June 1, 2024</span>
+                    </li>
+                    <li className="flex justify-between">
+                      <span className="text-gray-700">Application Deadline</span>
+                      <span className="font-medium">July 15, 2024</span>
+                    </li>
+                    <li className="flex justify-between">
+                      <span className="text-gray-700">Entrance Exam</span>
+                      <span className="font-medium">July 25, 2024</span>
+                    </li>
+                    <li className="flex justify-between">
+                      <span className="text-gray-700">Result Declaration</span>
+                      <span className="font-medium">August 5, 2024</span>
+                    </li>
+                    <li className="flex justify-between">
+                      <span className="text-gray-700">Counseling Begins</span>
+                      <span className="font-medium">August 10, 2024</span>
+                    </li>
+                    <li className="flex justify-between">
+                      <span className="text-gray-700">Classes Begin</span>
+                      <span className="font-medium">August 25, 2024</span>
+                    </li>
+                  </>
+                )}
+              </ul>
+
+              <div className="mt-6 pt-4 border-t">
+                <h3 className="font-semibold mb-2">Contact for Admission</h3>
+                <p className="text-gray-700 mb-1">Phone: +91 9975469123
+, +91 8411 888 588
+</p>
+                <p className="text-gray-700">Email: deshmukhpharmacy2022@gmail.com</p>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+
+        <Tabs defaultValue="eligibility" className="w-full mb-12">
+          <TabsList className="grid w-full grid-cols-1 md:grid-cols-4">
+            <TabsTrigger value="eligibility">Eligibility Criteria</TabsTrigger>
+            <TabsTrigger value="fee-structure">Fee Structure</TabsTrigger>
+            <TabsTrigger value="scholarship">Scholarship</TabsTrigger>
+            <TabsTrigger value="cancellation">Cancellation Rules</TabsTrigger>
+          </TabsList>
+
+          <TabsContent value="eligibility" className="mt-6">
+            <Card>
+              <CardContent className="p-6">
+                <h2 className="text-xl font-bold mb-4">Eligibility Criteria</h2>
+
+                <div className="overflow-x-auto">
+                  <table className="min-w-full bg-white border border-gray-200 rounded-lg">
+                    <thead>
+               
+                    </thead>
+                    <tbody className="divide-y divide-gray-200">
+                      {content.eligibility ? (
+                        <tr>
+                          <td colSpan={3} className="py-4 px-6">
+                            <div dangerouslySetInnerHTML={{ __html: content.eligibility }} />
+                          </td>
+                        </tr>
+                      ) : (
+                        <>
+                          <tr>
+                            <td className="py-3 px-4 whitespace-nowrap">B.A. Fashion Design</td>
+                            <td className="py-3 px-4">10+2 or equivalent from any recognized board</td>
+                            <td className="py-3 px-4">Entrance exam and portfolio review</td>
+                          </tr>
+                          <tr>
+                            <td className="py-3 px-4 whitespace-nowrap">B.Design</td>
+                            <td className="py-3 px-4">
+                              10+2 or equivalent from any recognized board with minimum 50% marks
+                            </td>
+                            <td className="py-3 px-4">Entrance exam, portfolio review, and personal interview</td>
+                          </tr>
+                        </>
+                      )}
+                    </tbody>
+                  </table>
+                </div>
+              </CardContent>
+            </Card>
+          </TabsContent>
+
+          <TabsContent value="fee-structure" className="mt-6">
+            <Card>
+              <CardContent className="p-6">
+                <h2 className="text-xl font-bold mb-4">Fee Structure</h2>
+
+                <div className="overflow-x-auto">
+                  <table className="min-w-full bg-white border border-gray-200 rounded-lg">
+                    <thead>
+                   
+                    </thead>
+                    <tbody className="divide-y divide-gray-200">
+                      {content.feeStructure ? (
+                        <tr>
+                          <td colSpan={5} className="py-4 px-6">
+                            <div dangerouslySetInnerHTML={{ __html: content.feeStructure }} />
+                          </td>
+                        </tr>
+                      ) : (
+                        <>
+                          <tr>
+                            <td className="py-3 px-4" rowSpan={3}>
+                              B.A. Fashion Design
+                            </td>
+                            <td className="py-3 px-4">General</td>
+                            <td className="py-3 px-4">₹50,000</td>
+                            <td className="py-3 px-4">₹10,000</td>
+                            <td className="py-3 px-4">₹60,000</td>
+                          </tr>
+                          <tr>
+                            <td className="py-3 px-4">OBC</td>
+                            <td className="py-3 px-4">₹45,000</td>
+                            <td className="py-3 px-4">₹10,000</td>
+                            <td className="py-3 px-4">₹55,000</td>
+                          </tr>
+                          <tr>
+                            <td className="py-3 px-4">SC/ST</td>
+                            <td className="py-3 px-4">₹40,000</td>
+                            <td className="py-3 px-4">₹10,000</td>
+                            <td className="py-3 px-4">₹50,000</td>
+                          </tr>
+                          <tr>
+                            <td className="py-3 px-4" rowSpan={3}>
+                              B.Design
+                            </td>
+                            <td className="py-3 px-4">General</td>
+                            <td className="py-3 px-4">₹60,000</td>
+                            <td className="py-3 px-4">₹12,000</td>
+                            <td className="py-3 px-4">₹72,000</td>
+                          </tr>
+                          <tr>
+                            <td className="py-3 px-4">OBC</td>
+                            <td className="py-3 px-4">₹55,000</td>
+                            <td className="py-3 px-4">₹12,000</td>
+                            <td className="py-3 px-4">₹67,000</td>
+                          </tr>
+                          <tr>
+                            <td className="py-3 px-4">SC/ST</td>
+                            <td className="py-3 px-4">₹50,000</td>
+                            <td className="py-3 px-4">₹12,000</td>
+                            <td className="py-3 px-4">₹62,000</td>
+                          </tr>
+                        </>
+                      )}
+                    </tbody>
+                  </table>
+                </div>
+
+                <p className="text-sm text-gray-500 mt-4">
+                  * Other charges include examination fee, library fee, development fee, etc.
+                </p>
+              </CardContent>
+            </Card>
+          </TabsContent>
+
+          <TabsContent value="scholarship" className="mt-6">
+            <Card>
+              <CardContent className="p-6">
+                <h2 className="text-xl font-bold mb-4">Scholarship Details</h2>
+
+                <div
+                  className="prose max-w-none mb-6"
+                  dangerouslySetInnerHTML={{
+                    __html:
+                      content.scholarship ||
+                      "The Deshmukh College Of Pharmacy offers various scholarships to meritorious students and those from economically weaker sections. These scholarships are designed to support talented students in pursuing their education without financial constraints.",
+                  }}
+                />
+
+                {scholarshipFile && (
+                  <Button asChild className=" bg-purple-600:bg-purple-700">
+                    <a href={`/api/files/${scholarshipFile._id}`} target="_blank" rel="noopener noreferrer">
+                      <FileText className="h-4 w-4 mr-2" />
+                      Download Scholarship Details
+                    </a>
+                  </Button>
+                )}
+              </CardContent>
+            </Card>
+          </TabsContent>
+
+          <TabsContent value="cancellation" className="mt-6">
+            <Card>
+              <CardContent className="p-6">
+                <h2 className="text-xl font-bold mb-4">Rules for Cancellation</h2>
+
+                <div
+                  className="prose max-w-none"
+                  dangerouslySetInnerHTML={{
+                    __html:
+                      content.cancellation ||
+                      `
                 <p>The following rules apply for cancellation of admission and refund of fees:</p>
                 <ol>
                   <li>Cancellation before the commencement of classes: 90% of the tuition fee will be refunded.</li>
@@ -377,41 +410,42 @@ export default async function AdmissionPage() {
                 <p>Note: Registration fee and other charges are non-refundable under any circumstances.</p>
                 <p>For cancellation, students must submit a written application to the admission office along with the original fee receipt.</p>
               `,
-                }}
-              />
-            </CardContent>
-          </Card>
-        </TabsContent>
-      </Tabs>
+                  }}
+                />
+              </CardContent>
+            </Card>
+          </TabsContent>
+        </Tabs>
 
-      <section>
-        <h2 className="text-2xl font-bold mb-6">Government Resolutions</h2>
+        <section>
+          <h2 className="text-2xl font-bold mb-6">Government Resolutions</h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {files.filter((f) => f.metadata.type === "government-resolution").length > 0 ? (
-            files
-              .filter((f) => f.metadata.type === "government-resolution")
-              .map((file) => (
-                <Card key={file._id} className="hover:shadow-md transition-shadow">
-                  <CardContent className="p-6 flex flex-col items-center text-center">
-                    <FileText className="h-12 w-12 text-blue-600 mb-4" />
-                    <h3 className="font-semibold mb-2">{file.filename}</h3>
-                    <p className="text-sm text-gray-500 mb-4">{new Date(file.uploadDate).toLocaleDateString()}</p>
-                    <Button asChild variant="outline" className="mt-auto">
-                      <a href={`/api/files/${file._id}`} target="_blank" rel="noopener noreferrer">
-                        View Document
-                      </a>
-                    </Button>
-                  </CardContent>
-                </Card>
-              ))
-          ) : (
-            <div className="col-span-full text-center py-8">
-              <p className="text-gray-500">Government resolution documents will be uploaded soon.</p>
-            </div>
-          )}
-        </div>
-      </section>
-    </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {files.filter((f) => f.metadata.type === "government-resolution").length > 0 ? (
+              files
+                .filter((f) => f.metadata.type === "government-resolution")
+                .map((file) => (
+                  <Card key={file._id} className="hover:shadow-md transition-shadow">
+                    <CardContent className="p-6 flex flex-col items-center text-center">
+                      <FileText className="h-12 w-12 text-purple-600 mb-4" />
+                      <h3 className="font-semibold mb-2">{file.filename}</h3>
+                      <p className="text-sm text-gray-500 mb-4">{new Date(file.uploadDate).toLocaleDateString()}</p>
+                      <Button asChild variant="outline" className="mt-auto">
+                        <a href={`/api/files/${file._id}`} target="_blank" rel="noopener noreferrer">
+                          View Document
+                        </a>
+                      </Button>
+                    </CardContent>
+                  </Card>
+                ))
+            ) : (
+              <div className="col-span-full text-center py-8">
+                <p className="text-gray-500">Government resolution documents will be uploaded soon.</p>
+              </div>
+            )}
+          </div>
+        </section>
+      </div>
+    </>
   )
 }

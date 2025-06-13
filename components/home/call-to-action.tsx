@@ -6,7 +6,7 @@ export default function CallToAction() {
   return (
     <section className="relative py-20 overflow-hidden">
       {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-indigo-600 via-indigo-700 to-teal-600" />
+      <div className="absolute inset-0 bg-gradient-to-br from-purple-600 via-purple-700 to-teal-600" />
       <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width=&quot;60&quot; height=&quot;60&quot; viewBox=&quot;0 0 60 60&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;%3E%3Cg fill=&quot;none&quot; fill-rule=&quot;evenodd&quot;%3E%3Cg fill=&quot;%23ffffff&quot; fill-opacity=&quot;0.05&quot;%3E%3Ccircle cx=&quot;30&quot; cy=&quot;30&quot; r=&quot;2&quot;/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')]" />
       
       {/* Decorative elements */}
@@ -30,7 +30,7 @@ export default function CallToAction() {
           </h2>
           
           {/* Description */}
-          <p className="text-xl text-indigo-100 mb-10 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-purple-100 mb-10 max-w-3xl mx-auto leading-relaxed">
             Join hundreds of students who have chosen Deshmukh Senior College for quality education 
             in Arts, Commerce, and Science. Applications are now open for the upcoming academic year.
           </p>
@@ -40,7 +40,7 @@ export default function CallToAction() {
             <Button 
               asChild 
               size="lg" 
-              className="bg-white text-indigo-700 hover:bg-gray-100 font-semibold px-8 py-6 rounded-xl transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
+              className="bg-white text-purple-700 hover:bg-gray-100 font-semibold px-8 py-6 rounded-xl transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
             >
               <Link href="/academics/programs" className="flex items-center">
                 <BookOpen className="w-5 h-5 mr-2" />
@@ -65,11 +65,11 @@ export default function CallToAction() {
           <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 max-w-2xl mx-auto">
             <div className="grid sm:grid-cols-2 gap-4 text-center">
               <div>
-                <p className="text-indigo-200 text-sm font-medium mb-1">Admission Helpline</p>
+                <p className="text-purple-200 text-sm font-medium mb-1">Admission Helpline</p>
                 <p className="text-white font-semibold">+91 9975469123</p>
               </div>
               <div>
-                <p className="text-indigo-200 text-sm font-medium mb-1">Email Us</p>
+                <p className="text-purple-200 text-sm font-medium mb-1">Email Us</p>
                 <p className="text-white font-semibold">admissions@deshmukhcollege.edu</p>
               </div>
             </div>

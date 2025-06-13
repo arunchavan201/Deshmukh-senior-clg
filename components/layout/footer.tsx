@@ -13,7 +13,7 @@ export default function Footer() {
           {/* College Info */}
           <div className="lg:col-span-2">
             <div className="mb-6">
-              <h3 className="text-2xl font-bold mb-2 bg-gradient-to-r from-indigo-400 to-teal-400 bg-clip-text text-transparent">
+              <h3 className="text-2xl font-bold mb-2 bg-gradient-to-r from-purple-400 to-teal-400 bg-clip-text text-transparent">
                 Deshmukh Senior College
               </h3>
               <p className="text-gray-400 font-medium">Arts • Commerce • Science</p>
@@ -24,7 +24,7 @@ export default function Footer() {
               through comprehensive academic programs and holistic development.
             </p>
             <div className="flex items-center space-x-4">
-              <div className="w-12 h-12 bg-gradient-to-br from-indigo-600 to-teal-600 rounded-lg flex items-center justify-center">
+              <div className="w-12 h-12 bg-gradient-to-br from-purple-600 to-teal-600 rounded-lg flex items-center justify-center">
                 <Award className="w-6 h-6 text-white" />
               </div>
               <div>
@@ -37,32 +37,32 @@ export default function Footer() {
           {/* Quick Links */}
           <div>
             <h3 className="text-lg font-semibold mb-6 flex items-center">
-              <BookOpen className="w-5 h-5 mr-2 text-indigo-400" />
+              <BookOpen className="w-5 h-5 mr-2 text-purple-400" />
               Academics
             </h3>
             <ul className="space-y-3">
               <li>
-                <Link href="/academics/arts" className="text-gray-300 hover:text-indigo-400 transition-colors duration-300 hover:translate-x-1 inline-block">
+                <Link href="/academics/arts" className="text-gray-300 hover:text-purple-400 transition-colors duration-300 hover:translate-x-1 inline-block">
                   Arts Stream
                 </Link>
               </li>
               <li>
-                <Link href="/academics/commerce" className="text-gray-300 hover:text-indigo-400 transition-colors duration-300 hover:translate-x-1 inline-block">
+                <Link href="/academics/commerce" className="text-gray-300 hover:text-purple-400 transition-colors duration-300 hover:translate-x-1 inline-block">
                   Commerce Stream
                 </Link>
               </li>
               <li>
-                <Link href="/academics/science" className="text-gray-300 hover:text-indigo-400 transition-colors duration-300 hover:translate-x-1 inline-block">
+                <Link href="/academics/science" className="text-gray-300 hover:text-purple-400 transition-colors duration-300 hover:translate-x-1 inline-block">
                   Science Stream
                 </Link>
               </li>
               <li>
-                <Link href="/academics/faculty" className="text-gray-300 hover:text-indigo-400 transition-colors duration-300 hover:translate-x-1 inline-block">
+                <Link href="/academics/faculty" className="text-gray-300 hover:text-purple-400 transition-colors duration-300 hover:translate-x-1 inline-block">
                   Faculty
                 </Link>
               </li>
               <li>
-                <Link href="/academics/admission" className="text-gray-300 hover:text-indigo-400 transition-colors duration-300 hover:translate-x-1 inline-block">
+                <Link href="/academics/admission" className="text-gray-300 hover:text-purple-400 transition-colors duration-300 hover:translate-x-1 inline-block">
                   Admissions
                 </Link>
               </li>

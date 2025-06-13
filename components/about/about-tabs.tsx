@@ -21,7 +21,7 @@ export function AboutTabs({ about, directors, leadership, section }: AboutTabsPr
       <div className="space-y-6">
         <div className="grid md:grid-cols-2 gap-8 items-center">
           <div>
-            <h2 className="text-2xl font-bold mb-4 text-indigo-700">Deshmukh Senior College (Arts, Commerce & Science)</h2>
+            <h2 className="text-2xl font-bold mb-4 text-purple-700">Deshmukh Senior College (Arts, Commerce & Science)</h2>
             <div
               className="prose max-w-none text-gray-700"
               dangerouslySetInnerHTML={{ __html: about.institute || "Content coming soon..." }}
@@ -36,7 +36,7 @@ export function AboutTabs({ about, directors, leadership, section }: AboutTabsPr
       <div className="space-y-6">
         <div className="grid md:grid-cols-2 gap-8 items-center">
           <div>
-            <h2 className="text-2xl font-bold mb-4 text-indigo-700">About Our Society</h2>
+            <h2 className="text-2xl font-bold mb-4 text-purple-700">About Our Society</h2>
             <div
               className="prose max-w-none text-gray-700"
               dangerouslySetInnerHTML={{ __html: about.society || "Content coming soon..." }}
@@ -51,7 +51,7 @@ export function AboutTabs({ about, directors, leadership, section }: AboutTabsPr
       <div className="grid md:grid-cols-2 gap-8">
         <Card className="bg-white/70 backdrop-blur-lg shadow-md hover:shadow-xl transition-shadow duration-300">
           <CardContent className="pt-6">
-            <h3 className="text-xl font-bold mb-4 text-indigo-700">Our Vision</h3>
+            <h3 className="text-xl font-bold mb-4 text-purple-700">Our Vision</h3>
             <p className="text-gray-700">
               {about.vision ||
                 "To be a premier institute for arts, commerce and science education, fostering creativity, innovation, and excellence."}
@@ -60,7 +60,7 @@ export function AboutTabs({ about, directors, leadership, section }: AboutTabsPr
         </Card>
         <Card className="bg-white/70 backdrop-blur-lg shadow-md hover:shadow-xl transition-shadow duration-300">
           <CardContent className="pt-6">
-            <h3 className="text-xl font-bold mb-4 text-indigo-700">Our Mission</h3>
+            <h3 className="text-xl font-bold mb-4 text-purple-700">Our Mission</h3>
             <ul className="list-disc pl-5 space-y-2 text-gray-700">
               {about.mission ? (
                 <div dangerouslySetInnerHTML={{ __html: about.mission }} />
@@ -87,7 +87,7 @@ export function AboutTabs({ about, directors, leadership, section }: AboutTabsPr
             <Card key={director._id} className="bg-white/70 backdrop-blur-lg shadow-md hover:shadow-xl transition-shadow duration-300">
               <CardContent className="pt-6">
                 <div className="flex flex-col items-center text-center">
-                  <div className="relative w-32 h-32 rounded-full overflow-hidden mb-4 border-4 border-indigo-300">
+                  <div className="relative w-32 h-32 rounded-full overflow-hidden mb-4 border-4 border-purple-300">
                     <Image
                       src={
                         director.imageId
@@ -99,7 +99,7 @@ export function AboutTabs({ about, directors, leadership, section }: AboutTabsPr
                       className="object-cover"
                     />
                   </div>
-                  <h3 className="text-lg font-bold text-indigo-700">{director.name}</h3>
+                  <h3 className="text-lg font-bold text-purple-700">{director.name}</h3>
                   <p className="text-teal-600">{director.role}</p>
                   {director.qualification && <p className="text-sm text-gray-600 mt-1">{director.qualification}</p>}
                 </div>
@@ -115,14 +115,14 @@ export function AboutTabs({ about, directors, leadership, section }: AboutTabsPr
   if (section === "leadership") {
     return (
       <div className="space-y-6">
-        <h2 className="text-2xl font-bold mb-4 text-indigo-700">Messages from Leadership</h2>
+        <h2 className="text-2xl font-bold mb-4 text-purple-700">Messages from Leadership</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {leadership && leadership.length > 0 ? (
             leadership.map((leader) => (
               <Card key={leader._id} className="bg-white/70 backdrop-blur-lg shadow-md hover:shadow-xl transition-shadow duration-300">
                 <CardContent className="p-0">
-                  <div className="flex flex-col items-center p-6 bg-gradient-to-b from-indigo-50 to-white">
-                    <div className="relative w-24 h-24 rounded-full overflow-hidden mb-4 border-4 border-indigo-300">
+                  <div className="flex flex-col items-center p-6 bg-gradient-to-b from-purple-50 to-white">
+                    <div className="relative w-24 h-24 rounded-full overflow-hidden mb-4 border-4 border-purple-300">
                       <Image
                         src={leader.imageId ? `/api/files/${leader.imageId}` : "/placeholder-user.jpg"}
                         alt={leader.name}
@@ -130,7 +130,7 @@ export function AboutTabs({ about, directors, leadership, section }: AboutTabsPr
                         className="object-cover"
                       />
                     </div>
-                    <h3 className="text-lg font-bold text-indigo-700">{leader.role}'s Message</h3>
+                    <h3 className="text-lg font-bold text-purple-700">{leader.role}'s Message</h3>
                     <p className="text-sm text-gray-600">{leader.name}</p>
                   </div>
                   <div

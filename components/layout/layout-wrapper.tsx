@@ -15,7 +15,7 @@ export default function LayoutWrapper({ children }: LayoutWrapperProps) {
   const isAuthPage = pathname?.includes('/auth') || pathname?.includes('/login')
   
   // Base classes for consistent styling
-  const baseClasses = "min-h-screen bg-gradient-to-br from-slate-50 via-white to-indigo-50/30"
+  const baseClasses = "min-h-screen bg-gradient-to-br from-slate-50 via-white to-purple-50/30"
   
   // Special styling for different page types
   const getPageClasses = () => {
@@ -24,7 +24,7 @@ export default function LayoutWrapper({ children }: LayoutWrapperProps) {
     }
     
     if (isAuthPage) {
-      return "min-h-screen bg-gradient-to-br from-indigo-600 via-purple-600 to-teal-600"
+      return "min-h-screen bg-gradient-to-br from-purple-600 via-purple-600 to-teal-600"
     }
     
     return baseClasses

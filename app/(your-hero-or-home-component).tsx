@@ -19,7 +19,7 @@ export default function HeroSection() {
   return (
     <section className="w-full h-[500px] flex flex-col md:flex-row">
       {/* Left static part */}
-      <div className="w-full md:w-1/2 flex flex-col justify-center px-8 py-12 bg-blue-900 text-white relative z-10">
+      <div className="w-full md:w-1/2 flex flex-col justify-center px-8 py-12 bg-purple-900 text-white relative z-10">
         {/* ...existing static content... */}
         <h2 className="text-green-400 text-sm font-semibold mb-2 tracking-widest">WELCOME TO DESHMUKH COLLEGE OF PHARMACY</h2>
         <h1 className="text-4xl md:text-5xl font-bold mb-4 leading-tight">

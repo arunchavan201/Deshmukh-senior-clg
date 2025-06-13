@@ -278,7 +278,7 @@ export default function ExamsPage() {
               </div>
 
               <div className="flex justify-end">
-                <Button onClick={handleSaveExamInfo} className=" bg-blue-600:bg-blue-700" disabled={isSaving}>
+                <Button onClick={handleSaveExamInfo} className=" bg-purple-600:bg-purple-700" disabled={isSaving}>
                   {isSaving ? "Saving..." : "Save Information"}
                 </Button>
               </div>
@@ -344,7 +344,7 @@ export default function ExamsPage() {
                         </a>
                         <button
                           onClick={() => handleDeleteSchedule(schedule._id)}
-                          className="px-3 py-1 text-sm text-blue-600 bg-blue-50 hover:bg-blue-100 rounded-md transition-colors"
+                          className="px-3 py-1 text-sm text-purple-600 bg-purple-50 hover:bg-purple-100 rounded-md transition-colors"
                         >
                           <Trash2 className="h-4 w-4" />
                         </button>
@@ -420,7 +420,7 @@ export default function ExamsPage() {
                         </a>
                         <button
                           onClick={() => handleDeleteResult(result._id)}
-                          className="px-3 py-1 text-sm text-blue-600 bg-blue-50 hover:bg-blue-100 rounded-md transition-colors"
+                          className="px-3 py-1 text-sm text-purple-600 bg-purple-50 hover:bg-purple-100 rounded-md transition-colors"
                         >
                           <Trash2 className="h-4 w-4" />
                         </button>

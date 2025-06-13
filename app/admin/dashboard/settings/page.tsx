@@ -156,7 +156,7 @@ export default function SettingsPage() {
                   />
                 </div>
 
-                <Button type="submit" className=" bg-blue-600:bg-blue-700 w-full" disabled={isSaving}>
+                <Button type="submit" className=" bg-purple-600:bg-purple-700 w-full" disabled={isSaving}>
                   {isSaving ? "Updating..." : "Update Password"}
                 </Button>
               </form>
@@ -215,7 +215,7 @@ export default function SettingsPage() {
                   />
                 </div>
 
-                <Button type="submit" className=" bg-blue-600:bg-blue-700" disabled={isSaving}>
+                <Button type="submit" className=" bg-purple-600:bg-purple-700" disabled={isSaving}>
                   {isSaving ? "Saving..." : "Save Contact Information"}
                 </Button>
               </form>

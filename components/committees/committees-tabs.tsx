@@ -21,7 +21,7 @@ export function CommitteesTabs({ committees, section }: CommitteesTabsProps) {
   }
   return (
     <div className="space-y-6">
-      <h2 className="text-2xl font-bold mb-4 text-blue-800">{committee.title}</h2>
+      <h2 className="text-2xl font-bold mb-4 text-purple-800">{committee.title}</h2>
       <div
         className="prose max-w-none"
         dangerouslySetInnerHTML={{ __html: committee.content || "Content coming soon..." }}

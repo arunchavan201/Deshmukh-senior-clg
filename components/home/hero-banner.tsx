@@ -9,7 +9,7 @@ import { ChevronLeft, ChevronRight, BookOpen, Users, Award } from "lucide-react"
 const slides = [
 	{
 		id: 1,
-		image: "/image2.png?height=600&width=1200",
+		image: "/bg.jpg?height=600&width=1200",
 		title: "Excellence in Arts Education",
 		description: "Discover the world of literature, philosophy, and creative expression",
 		cta: "Explore Arts",
@@ -17,7 +17,7 @@ const slides = [
 	},
 	{
 		id: 2,
-		image: "/image2.png?height=600&width=1200",
+		image: "/bg.jpg?height=600&width=1200",
 		title: "Commerce & Business Studies",
 		description: "Build your foundation in commerce, economics, and business management",
 		cta: "View Commerce",
@@ -25,7 +25,7 @@ const slides = [
 	},
 	{
 		id: 3,
-		image: "/image2.png?height=600&width=1200",
+		image: "/bg.jpg?height=600&width=1200",
 		title: "Scientific Innovation",
 		description: "Explore the frontiers of science with modern laboratories and research",
 		cta: "Discover Science",
@@ -52,10 +52,10 @@ export default function HeroBanner() {
 	}, [])
 
 	return (
-		<section className="w-full bg-gradient-to-br from-indigo-50 via-white to-teal-50 relative overflow-hidden">
+		<section className="w-full bg-gradient-to-br from-purple-50 via-white to-teal-50 relative overflow-hidden">
 			{/* Background decoration */}
-			<div className="absolute inset-0 bg-gradient-to-br from-indigo-100/20 to-teal-100/20" />
-			<div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-indigo-200/30 to-transparent rounded-full blur-3xl" />
+			<div className="absolute inset-0 bg-gradient-to-br from-purple-100/20 to-teal-100/20" />
+			<div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-purple-200/30 to-transparent rounded-full blur-3xl" />
 			<div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-teal-200/30 to-transparent rounded-full blur-3xl" />
 			
 			<div className="relative z-10 flex flex-col lg:flex-row min-h-[80vh]">
@@ -63,14 +63,14 @@ export default function HeroBanner() {
 				<div className="w-full lg:w-3/5 flex items-center justify-center px-6 sm:px-12 py-16 lg:py-24">
 					<div className="max-w-2xl text-center lg:text-left">
 						{/* Badge */}
-						<div className="inline-flex items-center px-4 py-2 bg-white/80 backdrop-blur-sm border border-indigo-200/50 rounded-full text-indigo-600 text-sm font-medium mb-6 shadow-lg">
+						<div className="inline-flex items-center px-4 py-2 bg-white/80 backdrop-blur-sm border border-purple-200/50 rounded-full text-purple-600 text-sm font-medium mb-6 shadow-lg">
 							<Award className="w-4 h-4 mr-2" />
 							SRTMU Affiliated College
 						</div>
 						
 						{/* Main heading */}
 						<h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-							<span className="bg-gradient-to-r from-indigo-600 to-teal-500 bg-clip-text text-transparent">
+							<span className="bg-gradient-to-r from-purple-600 to-teal-500 bg-clip-text text-transparent">
 								Deshmukh
 							</span>
 							<br />
@@ -79,9 +79,9 @@ export default function HeroBanner() {
 						
 						{/* Subtitle */}
 						<div className="flex items-center justify-center lg:justify-start gap-2 mb-6">
-							<div className="w-12 h-0.5 bg-gradient-to-r from-indigo-500 to-teal-500" />
+							<div className="w-12 h-0.5 bg-gradient-to-r from-purple-500 to-teal-500" />
 							<span className="text-gray-600 font-medium">Arts • Commerce • Science</span>
-							<div className="w-12 h-0.5 bg-gradient-to-r from-teal-500 to-indigo-500" />
+							<div className="w-12 h-0.5 bg-gradient-to-r from-teal-500 to-purple-500" />
 						</div>
 						
 						{/* Description */}
@@ -93,11 +93,11 @@ export default function HeroBanner() {
 						
 						{/* Action buttons */}
 						<div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-							<Button className="bg-gradient-to-r from-indigo-600 to-indigo-700 hover:from-indigo-700 hover:to-indigo-800 text-white px-8 py-6 rounded-xl font-semibold text-base shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-0.5">
+							<Button className="bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white px-8 py-6 rounded-xl font-semibold text-base shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-0.5">
 								<BookOpen className="w-5 h-5 mr-2" />
 								Explore Programs
 							</Button>
-							<Button variant="outline" className="border-2 border-indigo-200 text-indigo-700 hover:bg-indigo-50 px-8 py-6 rounded-xl font-semibold text-base transition-all duration-300 hover:shadow-lg">
+							<Button variant="outline" className="border-2 border-purple-200 text-purple-700 hover:bg-purple-50 px-8 py-6 rounded-xl font-semibold text-base transition-all duration-300 hover:shadow-lg">
 								<Users className="w-5 h-5 mr-2" />
 								Virtual Tour
 							</Button>
@@ -108,9 +108,6 @@ export default function HeroBanner() {
 				{/* Right slider section */}
 				<div className="w-full lg:w-2/5 relative">
 					<div className="relative h-[400px] lg:h-full overflow-hidden">
-						{/* Glassmorphic overlay */}
-						<div className="absolute inset-4 bg-white/20 backdrop-blur-sm border border-white/30 rounded-2xl z-10 shadow-2xl" />
-						
 						<Image
 							src={slides[currentSlide].image}
 							alt={slides[currentSlide].title}

@@ -140,7 +140,7 @@ export default function LibraryPage() {
           <h1 className="text-3xl font-bold tracking-tight">Library Management</h1>
           <p className="text-gray-500">Manage library content and resources</p>
         </div>
-        <Button asChild className=" bg-blue-600:bg-blue-700">
+        <Button asChild className=" bg-purple-600:bg-purple-700">
           <Link href="/admin/dashboard/library/resources/new">
             <Plus className="h-4 w-4 mr-2" /> Add Resource
           </Link>
@@ -189,7 +189,7 @@ export default function LibraryPage() {
               </div>
 
               <div className="flex justify-end">
-                <Button onClick={handleSaveContent} className=" bg-blue-600:bg-blue-700" disabled={isSaving}>
+                <Button onClick={handleSaveContent} className=" bg-purple-600:bg-purple-700" disabled={isSaving}>
                   {isSaving ? "Saving..." : "Save Content"}
                 </Button>
               </div>
@@ -223,7 +223,7 @@ export default function LibraryPage() {
                             variant="ghost"
                             size="sm"
                             onClick={() => handleDeleteResource(resource._id)}
-                            className="text-blue-500 hover:text-blue-700 hover:bg-blue-50 h-8 w-8 p-0"
+                            className="text-purple-500 hover:text-purple-700 hover:bg-purple-50 h-8 w-8 p-0"
                           >
                             <Trash2 className="h-4 w-4" />
                           </Button>
@@ -247,7 +247,7 @@ export default function LibraryPage() {
               ) : (
                 <div className="text-center py-8">
                   <p className="text-gray-500">No resources found</p>
-                  <Button asChild className="mt-4  bg-blue-600:bg-blue-700">
+                  <Button asChild className="mt-4  bg-purple-600:bg-purple-700">
                     <Link href="/admin/dashboard/library/resources/new">Add Your First Resource</Link>
                   </Button>
                 </div>

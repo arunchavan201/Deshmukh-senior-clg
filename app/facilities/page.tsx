@@ -18,7 +18,7 @@ async function getFacilities() {
 
 function SectionHero({ title, bgImage }: { title: string; bgImage?: string }) {
   return (
-    <div className="relative w-full h-40 md:h-56 flex items-center justify-center">
+    <div className="relative w-full h-56 md:h-56 flex items-center justify-center overflow-hidden">
       {bgImage && (
         <Image
           src={bgImage}
@@ -28,15 +28,21 @@ function SectionHero({ title, bgImage }: { title: string; bgImage?: string }) {
           style={{ zIndex: 0 }}
         />
       )}
-      <div className="absolute inset-0 bg-gradient-to-b from-blue-900/80 to-green-400/80" style={{ zIndex: 1 }} />
-      <div className="relative z-10 flex flex-col items-center justify-center w-full h-full">
+      {/* Unique overlay with multiple gradients and shapes */}
+      <div className="absolute inset-0 z-10 pointer-events-none">
+        <div className="absolute inset-0 bg-gradient-to-br from-purple-800/70 via-teal-600/60 to-purple-400/40" />
+        <div className="absolute -top-10 -left-10 w-48 h-48 bg-purple-400/30 rounded-full blur-2xl" />
+        <div className="absolute top-10 right-0 w-40 h-40 bg-teal-300/30 rounded-full blur-2xl" />
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-96 h-24 bg-white/10 rounded-full blur-3xl" />
+        <svg className="absolute bottom-0 left-0 w-full" height="40" viewBox="0 0 100 10" preserveAspectRatio="none">
+          <polygon points="0,10 100,0 100,10" fill="#F7F9FC" />
+        </svg>
+      </div>
+      <div className="relative z-20 flex flex-col items-center justify-center w-full h-full">
         <h1 className="text-2xl md:text-4xl font-bold text-white text-center drop-shadow-lg py-8">
           {title}
         </h1>
       </div>
-      <svg className="absolute bottom-0 left-0 w-full" height="32" viewBox="0 0 100 10" preserveAspectRatio="none" style={{ zIndex: 2 }}>
-        <polygon points="0,10 100,0 100,10" fill="white" />
-      </svg>
     </div>
   )
 }
@@ -49,18 +55,18 @@ export default async function FacilitiesPage() {
 
   return (
     <>
-      <SectionHero title="Our Facilities" bgImage="/about.avif" />
+      <SectionHero title="Our Facilities" bgImage="/header.webp" />
       <div className="container mx-auto px-4 py-12">
-        <h1 className="text-3xl font-bold text-center mb-12 text-blue-800">Our Facilities</h1>
+        <h1 className="text-3xl font-bold text-center mb-12 text-purple-800">Our Facilities</h1>
 
         {allFacilities.length > 0 ? (
           <Tabs defaultValue={allFacilities[0]?.id} className="w-full">
-            <TabsList className="grid w-full grid-cols-2 md:grid-cols-3 mb-8 bg-blue-50">
+            <TabsList className="grid w-full grid-cols-2 md:grid-cols-3 mb-8 bg-purple-50">
               {allFacilities.map((facility) => (
                 <TabsTrigger 
                   key={facility.id} 
                   value={facility.id}
-                  className="data-[state=active]:bg-blue-600 data-[state=active]:text-white"
+                  className="data-[state=active]:bg-purple-600 data-[state=active]:text-white"
                 >
                   {facility.name}
                 </TabsTrigger>
@@ -81,7 +87,7 @@ export default async function FacilitiesPage() {
                         />
                       </div>
                       <div>
-                        <h2 className="text-2xl font-bold mb-4 text-blue-800">{facility.name}</h2>
+                        <h2 className="text-2xl font-bold mb-4 text-purple-800">{facility.name}</h2>
                         <div className="prose max-w-none text-gray-700">
                           {typeof facility.description === "string" ? (
                             <p>{facility.description}</p>
@@ -92,7 +98,7 @@ export default async function FacilitiesPage() {
 
                         {facility.features && facility.features.length > 0 && (
                           <div className="mt-6">
-                            <h3 className="text-lg font-semibold mb-2 text-blue-700">Features:</h3>
+                            <h3 className="text-lg font-semibold mb-2 text-purple-700">Features:</h3>
                             <ul className="list-disc pl-5 space-y-1 text-gray-600">
                               {facility.features.map((feature:any, index:any) => (
                                 <li key={index}>{feature}</li>
@@ -105,7 +111,7 @@ export default async function FacilitiesPage() {
 
                     {facility.images && facility.images.length > 1 && (
                       <div className="mt-8">
-                        <h3 className="text-lg font-semibold mb-4 text-blue-700">More Images</h3>
+                        <h3 className="text-lg font-semibold mb-4 text-purple-700">More Images</h3>
                         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                           {facility.images.slice(1).map((image:any, index:any) => (
                             <div key={index} className="relative h-40 rounded-lg overflow-hidden border border-blue-100">
@@ -129,12 +135,12 @@ export default async function FacilitiesPage() {
           <div className="text-center py-16">
             <Card className="max-w-md mx-auto border-blue-100 shadow-lg">
               <CardContent className="p-8">
-                <div className="text-blue-600 mb-4">
+                <div className="text-purple-600 mb-4">
                   <svg className="w-16 h-16 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                   </svg>
                 </div>
-                <h3 className="text-xl font-bold text-blue-800 mb-2">Facilities Coming Soon</h3>
+                <h3 className="text-xl font-bold text-purple-800 mb-2">Facilities Coming Soon</h3>
                 <p className="text-gray-600">We are currently adding our facilities information. Please check back soon for updates on our state-of-the-art pharmacy laboratories and learning spaces.</p>
               </CardContent>
             </Card>

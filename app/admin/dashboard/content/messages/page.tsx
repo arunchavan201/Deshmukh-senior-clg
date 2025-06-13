@@ -150,7 +150,7 @@ export default function MessagesPage() {
                     variant="ghost"
                     size="sm"
                     onClick={() => removeMessage(index)}
-                    className="text-blue-500 hover:text-blue-700 hover:bg-blue-50"
+                    className="text-purple-500 hover:text-purple-700 hover:bg-purple-50"
                   >
                     <Trash2 className="h-4 w-4" />
                   </Button>
@@ -217,7 +217,7 @@ export default function MessagesPage() {
           ))}
 
           <div className="flex justify-end">
-            <Button onClick={handleSave} className=" bg-blue-600:bg-blue-700" disabled={isSaving}>
+            <Button onClick={handleSave} className=" bg-purple-600:bg-purple-700" disabled={isSaving}>
               {isSaving ? "Saving..." : "Save All Messages"}
             </Button>
           </div>
@@ -226,7 +226,7 @@ export default function MessagesPage() {
         <Card>
           <CardContent className="text-center py-8">
             <p className="text-gray-500">No messages found</p>
-            <Button onClick={addMessage} className="mt-4  bg-blue-600:bg-blue-700">
+            <Button onClick={addMessage} className="mt-4  bg-purple-600:bg-purple-700">
               Add Your First Message
             </Button>
           </CardContent>

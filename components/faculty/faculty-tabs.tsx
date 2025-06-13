@@ -15,7 +15,7 @@ export function FacultyTabs({ teaching, nonTeaching }: { teaching: any[]; nonTea
       <div className="flex justify-center">
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
-            <Button variant="outline" className="border-rose-200 bg-blue-50 hover:text-blue-100">
+            <Button variant="outline" className="border-rose-200 bg-purple-50 hover:text-purple-100">
               {activeTab === "teaching" ? "Teaching Staff" : "Non-Teaching Staff"}
               <ChevronDown className="ml-2 h-4 w-4" />
             </Button>
@@ -45,8 +45,8 @@ export function FacultyTabs({ teaching, nonTeaching }: { teaching: any[]; nonTea
                           className="object-cover"
                         />
                       </div>
-                      <h3 className="text-xl font-bold text-center text-blue-800">{member.name}</h3>
-                      <p className="text-blue-600 text-center">{member.designation}</p>
+                      <h3 className="text-xl font-bold text-center text-purple-800">{member.name}</h3>
+                      <p className="text-purple-600 text-center">{member.designation}</p>
                       {member.department && <p className="text-gray-600 text-center">{member.department}</p>}
                       {member.qualification && (
                         <p className="text-sm text-gray-500 text-center mt-1">{member.qualification}</p>
@@ -57,12 +57,12 @@ export function FacultyTabs({ teaching, nonTeaching }: { teaching: any[]; nonTea
                       <div className="p-4 border-t border-rose-100">
                         {member.experience && (
                           <div className="mb-2">
-                            <span className="font-medium text-blue-700">Experience:</span> {member.experience}
+                            <span className="font-medium text-purple-700">Experience:</span> {member.experience}
                           </div>
                         )}
                         {member.specialization && (
                           <div>
-                            <span className="font-medium text-blue-700">Specialization:</span> {member.specialization}
+                            <span className="font-medium text-purple-700">Specialization:</span> {member.specialization}
                           </div>
                         )}
                       </div>
@@ -70,7 +70,7 @@ export function FacultyTabs({ teaching, nonTeaching }: { teaching: any[]; nonTea
 
                     {member.email && (
                       <div className="p-4 text-center border-t border-rose-100">
-                        <a href={`mailto:${member.email}`} className="text-blue-600 hover:underline">
+                        <a href={`mailto:${member.email}`} className="text-purple-600 hover:underline">
                           {member.email}
                         </a>
                       </div>
@@ -96,14 +96,14 @@ export function FacultyTabs({ teaching, nonTeaching }: { teaching: any[]; nonTea
                         className="object-cover"
                       />
                     </div>
-                    <h3 className="text-xl font-bold text-center text-blue-800">{member.name}</h3>
-                    <p className="text-blue-600 text-center">{member.designation}</p>
+                    <h3 className="text-xl font-bold text-center text-purple-800">{member.name}</h3>
+                    <p className="text-purple-600 text-center">{member.designation}</p>
                     {member.department && <p className="text-gray-600 text-center">{member.department}</p>}
                   </div>
 
                   {member.email && (
                     <div className="p-4 text-center border-t border-rose-100">
-                      <a href={`mailto:${member.email}`} className="text-blue-600 hover:underline">
+                      <a href={`mailto:${member.email}`} className="text-purple-600 hover:underline">
                         {member.email}
                       </a>
                     </div>

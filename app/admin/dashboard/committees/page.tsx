@@ -79,7 +79,7 @@ export default function CommitteesPage() {
           <h1 className="text-3xl font-bold tracking-tight">Committees</h1>
           <p className="text-gray-500">Manage institute committees and their members</p>
         </div>
-        <Button asChild className=" bg-blue-600:bg-blue-700">
+        <Button asChild className=" bg-purple-600:bg-purple-700">
           <Link href="/admin/dashboard/committees/new">
             <Plus className="h-4 w-4 mr-2" /> Add Committee
           </Link>
@@ -112,7 +112,7 @@ export default function CommitteesPage() {
                     <Button
                       variant="outline"
                       size="icon"
-                      className="h-8 w-8 text-blue-500 hover:text-blue-600 hover:bg-blue-50"
+                      className="h-8 w-8 text-purple-500 hover:text-purple-600 hover:bg-purple-50"
                       onClick={() => handleDelete(committee._id)}
                     >
                       <Trash2 className="h-4 w-4" />
@@ -125,7 +125,7 @@ export default function CommitteesPage() {
           ) : (
             <div className="text-center py-8">
               <p className="text-gray-500">No committees found</p>
-              <Button asChild className="mt-4  bg-blue-600:bg-blue-700">
+              <Button asChild className="mt-4  bg-purple-600:bg-purple-700">
                 <Link href="/admin/dashboard/committees/new">Create your first committee</Link>
               </Button>
             </div>

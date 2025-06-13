@@ -148,7 +148,7 @@ export default function BannersPage() {
         </div>
         <Button 
           onClick={() => setActiveTab("upload")} 
-          className="bg-blue-600 hover:bg-blue-700"
+          className="bg-purple-600 hover:bg-purple-700"
         >
           <Plus className="h-4 w-4 mr-2" /> Upload Banner
         </Button>
@@ -208,7 +208,7 @@ export default function BannersPage() {
                             href={banner.link}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-sm text-blue-600 hover:underline block mb-3"
+                            className="text-sm text-purple-600 hover:underline block mb-3"
                           >
                             View Link →
                           </a>
@@ -236,7 +236,7 @@ export default function BannersPage() {
                   <p className="text-gray-500 mb-4">No banners found</p>
                   <Button 
                     onClick={() => setActiveTab("upload")} 
-                    className="bg-blue-600 hover:bg-blue-700"
+                    className="bg-purple-600 hover:bg-purple-700"
                   >
                     Upload your first banner
                   </Button>
@@ -334,7 +334,7 @@ export default function BannersPage() {
                 <div className="flex space-x-2">
                   <Button 
                     type="submit" 
-                    className="bg-blue-600 hover:bg-blue-700"
+                    className="bg-purple-600 hover:bg-purple-700"
                     disabled={isUploading}
                   >
                     <Upload className="h-4 w-4 mr-2" />

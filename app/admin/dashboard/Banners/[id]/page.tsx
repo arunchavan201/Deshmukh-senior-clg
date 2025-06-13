@@ -228,7 +228,7 @@ export default function EditBannerPage({ params }: { params: { id: string } }) {
             <div className="flex space-x-2">
               <Button 
                 type="submit" 
-                className="bg-blue-600 hover:bg-blue-700"
+                className="bg-purple-600 hover:bg-purple-700"
                 disabled={isSaving}
               >
                 <Save className="h-4 w-4 mr-2" />

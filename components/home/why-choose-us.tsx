@@ -55,7 +55,7 @@ export default function WhyChooseUs() {
           </div>
           <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
             Excellence in Every
-            <span className="bg-gradient-to-r from-teal-600 to-indigo-600 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-teal-600 to-purple-600 bg-clip-text text-transparent">
               {" "}
               Aspect
             </span>
@@ -76,10 +76,10 @@ export default function WhyChooseUs() {
                 className="group bg-white rounded-2xl p-6 shadow-lg border border-slate-100 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 cursor-pointer"
               >
                 <div className="flex flex-col items-center text-center">
-                  <div className="w-16 h-16 bg-gradient-to-br from-indigo-500 to-teal-500 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-teal-500 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
                     <IconComponent className="w-8 h-8 text-white" />
                   </div>
-                  <h3 className="text-lg font-bold text-gray-900 mb-3 group-hover:text-indigo-600 transition-colors duration-300">
+                  <h3 className="text-lg font-bold text-gray-900 mb-3 group-hover:text-purple-600 transition-colors duration-300">
                     {reason.title}
                   </h3>
                   <p className="text-gray-600 text-sm leading-relaxed">
@@ -94,19 +94,19 @@ export default function WhyChooseUs() {
         {/* Bottom Stats */}
         <div className="grid sm:grid-cols-3 gap-8 mt-16 pt-16 border-t border-slate-200">
           <div className="text-center">
-            <div className="text-4xl font-bold bg-gradient-to-r from-indigo-600 to-teal-600 bg-clip-text text-transparent mb-2">
+            <div className="text-4xl font-bold bg-gradient-to-r from-purple-600 to-teal-600 bg-clip-text text-transparent mb-2">
               500+
             </div>
             <p className="text-gray-600 font-medium">Students Enrolled</p>
           </div>
           <div className="text-center">
-            <div className="text-4xl font-bold bg-gradient-to-r from-teal-600 to-indigo-600 bg-clip-text text-transparent mb-2">
+            <div className="text-4xl font-bold bg-gradient-to-r from-teal-600 to-purple-600 bg-clip-text text-transparent mb-2">
               25+
             </div>
             <p className="text-gray-600 font-medium">Expert Faculty</p>
           </div>
           <div className="text-center">
-            <div className="text-4xl font-bold bg-gradient-to-r from-indigo-600 to-teal-600 bg-clip-text text-transparent mb-2">
+            <div className="text-4xl font-bold bg-gradient-to-r from-purple-600 to-teal-600 bg-clip-text text-transparent mb-2">
               15+
             </div>
             <p className="text-gray-600 font-medium">Years of Excellence</p>

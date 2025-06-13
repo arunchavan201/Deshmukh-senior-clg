@@ -101,7 +101,7 @@ export function GalleryContent({ selectedCategory }: { selectedCategory?: string
         <>
           {currentCategory && (
             <div className="text-center mb-8">
-              <h2 className="text-2xl font-bold text-blue-800 mb-2">{currentCategory.name}</h2>
+              <h2 className="text-2xl font-bold text-purple-800 mb-2">{currentCategory.name}</h2>
               {currentCategory.description && (
                 <p className="text-gray-600 max-w-2xl mx-auto">{currentCategory.description}</p>
               )}
@@ -123,7 +123,7 @@ export function GalleryContent({ selectedCategory }: { selectedCategory?: string
                     </div>
                     {(image.title || image.description) && (
                       <div className="p-4">
-                        {image.title && <h3 className="font-bold text-blue-800">{image.title}</h3>}
+                        {image.title && <h3 className="font-bold text-purple-800">{image.title}</h3>}
                         {image.description && <p className="text-gray-600 text-sm mt-1">{image.description}</p>}
                       </div>
                     )}

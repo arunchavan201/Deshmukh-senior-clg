@@ -304,7 +304,7 @@ export default function AdmissionsPage() {
                         href={`/api/files/${brochureId}`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-sm text-blue-600 hover:underline"
+                        className="text-sm text-purple-600 hover:underline"
                       >
                         View Uploaded Brochure
                       </a>
@@ -330,7 +330,7 @@ export default function AdmissionsPage() {
       </Tabs>
 
       <div className="flex justify-end">
-        <Button onClick={handleSave} className=" bg-blue-600:bg-blue-700" disabled={isSaving}>
+        <Button onClick={handleSave} className=" bg-purple-600:bg-purple-700" disabled={isSaving}>
           {isSaving ? "Saving..." : "Save All Changes"}
         </Button>
       </div>

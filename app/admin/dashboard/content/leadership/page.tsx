@@ -158,7 +158,7 @@ export default function LeadershipPage() {
                     variant="ghost"
                     size="sm"
                     onClick={() => removeLeader(index)}
-                    className="text-blue-500 hover:text-blue-700 hover:bg-blue-50"
+                    className="text-purple-500 hover:text-purple-700 hover:bg-purple-50"
                   >
                     <Trash2 className="h-4 w-4" />
                   </Button>
@@ -247,7 +247,7 @@ export default function LeadershipPage() {
           ))}
 
           <div className="flex justify-end">
-            <Button onClick={handleSave} className=" bg-blue-600:bg-blue-700" disabled={isSaving}>
+            <Button onClick={handleSave} className=" bg-purple-600:bg-purple-700" disabled={isSaving}>
               {isSaving ? "Saving..." : "Save All Leaders"}
             </Button>
           </div>
@@ -256,7 +256,7 @@ export default function LeadershipPage() {
         <Card>
           <CardContent className="text-center py-8">
             <p className="text-gray-500">No leadership profiles found</p>
-            <Button onClick={addLeader} className="mt-4  bg-blue-600:bg-blue-700">
+            <Button onClick={addLeader} className="mt-4  bg-purple-600:bg-purple-700">
               Add Your First Leader
             </Button>
           </CardContent>

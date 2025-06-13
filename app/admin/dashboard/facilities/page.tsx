@@ -80,7 +80,7 @@ export default function FacilitiesPage() {
           <h1 className="text-3xl font-bold tracking-tight">Facilities</h1>
           <p className="text-gray-500">Manage institute facilities</p>
         </div>
-        <Button asChild className=" bg-blue-600:bg-blue-700">
+        <Button asChild className=" bg-purple-600:bg-purple-700">
           <Link href="/admin/dashboard/facilities/new">
             <Plus className="h-4 w-4 mr-2" /> Add Facility
           </Link>
@@ -124,7 +124,7 @@ export default function FacilitiesPage() {
                       <Button
                         variant="outline"
                         size="icon"
-                        className="h-7 w-7 text-blue-500 hover:text-blue-600 hover:bg-blue-50"
+                        className="h-7 w-7 text-purple-500 hover:text-purple-600 hover:bg-purple-50"
                         onClick={() => handleDelete(facility._id)}
                       >
                         <Trash2 className="h-3 w-3" />
@@ -138,7 +138,7 @@ export default function FacilitiesPage() {
           ) : (
             <div className="text-center py-8">
               <p className="text-gray-500">No facilities found</p>
-              <Button asChild className="mt-4  bg-blue-600:bg-blue-700">
+              <Button asChild className="mt-4  bg-purple-600:bg-purple-700">
                 <Link href="/admin/dashboard/facilities/new">Add your first facility</Link>
               </Button>
             </div>

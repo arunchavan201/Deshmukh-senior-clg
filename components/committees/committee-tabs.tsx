@@ -21,21 +21,21 @@ export function CommitteeTabs({ committees, section }: CommitteeTabsProps) {
     <div className="space-y-6">
       <Card className="border-rose-100 hover:shadow-lg transition-shadow">
         <CardContent className="pt-6">
-          <h2 className="text-2xl font-bold mb-6 text-blue-800">{selectedCommittee.name}</h2>
+          <h2 className="text-2xl font-bold mb-6 text-purple-800">{selectedCommittee.name}</h2>
           <div className="overflow-x-auto">
             <table className="min-w-full bg-white border border-gray-200 rounded-lg">
               <thead>
-                <tr className="bg-blue-50">
-                  <th className="py-3 px-4 text-left text-xs font-medium text-blue-800 uppercase tracking-wider border-b">
+                <tr className="bg-purple-50">
+                  <th className="py-3 px-4 text-left text-xs font-medium text-purple-800 uppercase tracking-wider border-b">
                     Name
                   </th>
-                  <th className="py-3 px-4 text-left text-xs font-medium text-blue-800 uppercase tracking-wider border-b">
+                  <th className="py-3 px-4 text-left text-xs font-medium text-purple-800 uppercase tracking-wider border-b">
                     Role
                   </th>
-                  <th className="py-3 px-4 text-left text-xs font-medium text-blue-800 uppercase tracking-wider border-b">
+                  <th className="py-3 px-4 text-left text-xs font-medium text-purple-800 uppercase tracking-wider border-b">
                     Department
                   </th>
-                  <th className="py-3 px-4 text-left text-xs font-medium text-blue-800 uppercase tracking-wider border-b">
+                  <th className="py-3 px-4 text-left text-xs font-medium text-purple-800 uppercase tracking-wider border-b">
                     Contact
                   </th>
                 </tr>
@@ -43,7 +43,7 @@ export function CommitteeTabs({ committees, section }: CommitteeTabsProps) {
               <tbody className="divide-y divide-gray-200">
                 {selectedCommittee.members && selectedCommittee.members.length > 0 ? (
                   selectedCommittee.members.map((member: any, index: number) => (
-                    <tr key={index} className={index % 2 === 0 ? "bg-white" : "bg-blue-50/30"}>
+                    <tr key={index} className={index % 2 === 0 ? "bg-white" : "bg-purple-50/30"}>
                       <td className="py-3 px-4 whitespace-nowrap">{member.name}</td>
                       <td className="py-3 px-4 whitespace-nowrap">{member.role}</td>
                       <td className="py-3 px-4 whitespace-nowrap">{member.department || "-"}</td>
@@ -62,7 +62,7 @@ export function CommitteeTabs({ committees, section }: CommitteeTabsProps) {
           </div>
           {selectedCommittee.description && (
             <div className="mt-6">
-              <h3 className="text-lg font-semibold mb-2 text-blue-700">About this Committee</h3>
+              <h3 className="text-lg font-semibold mb-2 text-purple-700">About this Committee</h3>
               <div className="prose max-w-none" dangerouslySetInnerHTML={{ __html: selectedCommittee.description }} />
             </div>
           )}

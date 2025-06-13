@@ -26,7 +26,7 @@ function DeleteButton({ id }: { id: string }) {
     }
   }
   return (
-    <button onClick={handleDelete} className="h-8 w-8 text-blue-500 hover:text-blue-600 hover:bg-blue-50">
+    <button onClick={handleDelete} className="h-8 w-8 text-purple-500 hover:text-purple-600 hover:bg-purple-50">
       <Trash2 className="h-4 w-4" />
       <span className="sr-only">Delete</span>
     </button>
@@ -57,7 +57,7 @@ export default function AnnouncementsPage() {
           <h1 className="text-3xl font-bold tracking-tight">Announcements</h1>
           <p className="text-gray-500">Manage announcements displayed on the website</p>
         </div>
-        <Button asChild className=" bg-blue-600:bg-blue-700">
+        <Button asChild className=" bg-purple-600:bg-purple-700">
           <Link href="/admin/dashboard/announcements/new">
             <Plus className="h-4 w-4 mr-2" /> Add Announcement
           </Link>
@@ -84,7 +84,7 @@ export default function AnnouncementsPage() {
                       <span className="font-medium">{announcement.text}</span>
                       <span
                         className={`ml-3 px-2 py-1 text-xs rounded-full ${
-                          announcement.isActive ? "bg-green-100 text-blue-800" : "bg-gray-100 text-gray-800"
+                          announcement.isActive ? "bg-green-100 text-purple-800" : "bg-gray-100 text-gray-800"
                         }`}
                       >
                         {announcement.isActive ? "Active" : "Inactive"}
@@ -95,7 +95,7 @@ export default function AnnouncementsPage() {
                         href={announcement.link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-sm text-blue-600 hover:underline"
+                        className="text-sm text-purple-600 hover:underline"
                       >
                         {announcement.link}
                       </a>
@@ -119,7 +119,7 @@ export default function AnnouncementsPage() {
           ) : (
             <div className="text-center py-8">
               <p className="text-gray-500">No announcements found</p>
-              <Button asChild className="mt-4  bg-blue-600:bg-blue-700">
+              <Button asChild className="mt-4  bg-purple-600:bg-purple-700">
                 <Link href="/admin/dashboard/announcements/new">Create your first announcement</Link>
               </Button>
             </div>

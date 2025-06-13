@@ -8,13 +8,13 @@ export default function InstituteHighlights() {
       <div className="container mx-auto px-6 lg:px-8">
         {/* Header Section */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center px-4 py-2 bg-indigo-100 text-indigo-700 rounded-full font-medium text-sm mb-4">
+          <div className="inline-flex items-center px-4 py-2 bg-purple-100 text-purple-700 rounded-full font-medium text-sm mb-4">
             <GraduationCap className="w-4 h-4 mr-2" />
             About Our College
           </div>
           <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
             Nurturing Excellence in
-            <span className="bg-gradient-to-r from-indigo-600 to-teal-500 bg-clip-text text-transparent"> Education</span>
+            <span className="bg-gradient-to-r from-purple-600 to-teal-500 bg-clip-text text-transparent"> Education</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Deshmukh Senior College stands as a beacon of quality education, affiliated with 
@@ -29,7 +29,7 @@ export default function InstituteHighlights() {
           <div className="space-y-8">
             <div className="bg-white rounded-2xl p-8 shadow-lg border border-slate-100 hover:shadow-xl transition-all duration-300">
               <div className="flex items-center mb-4">
-                <div className="w-12 h-12 bg-gradient-to-br from-indigo-500 to-teal-500 rounded-lg flex items-center justify-center">
+                <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-teal-500 rounded-lg flex items-center justify-center">
                   <BookOpen className="w-6 h-6 text-white" />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 ml-4">Academic Excellence</h3>
@@ -43,7 +43,7 @@ export default function InstituteHighlights() {
 
             <div className="bg-white rounded-2xl p-8 shadow-lg border border-slate-100 hover:shadow-xl transition-all duration-300">
               <div className="flex items-center mb-4">
-                <div className="w-12 h-12 bg-gradient-to-br from-teal-500 to-indigo-500 rounded-lg flex items-center justify-center">
+                <div className="w-12 h-12 bg-gradient-to-br from-teal-500 to-purple-500 rounded-lg flex items-center justify-center">
                   <Users className="w-6 h-6 text-white" />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 ml-4">Expert Faculty</h3>
@@ -60,7 +60,7 @@ export default function InstituteHighlights() {
           <div className="relative">
             <div className="relative h-96 rounded-2xl overflow-hidden shadow-2xl">
               <Image
-                src="/student.jpg"
+                src="/student1.jpg"
                 alt="Students at Deshmukh Senior College"
                 fill
                 className="object-cover"
@@ -70,7 +70,7 @@ export default function InstituteHighlights() {
             {/* Floating card */}
             <div className="absolute -bottom-8 -left-8 bg-white rounded-xl p-6 shadow-2xl border border-slate-100">
               <div className="flex items-center space-x-4">
-                <div className="w-12 h-12 bg-gradient-to-br from-indigo-500 to-teal-500 rounded-full flex items-center justify-center">
+                <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-teal-500 rounded-full flex items-center justify-center">
                   <span className="text-white font-bold text-lg">15+</span>
                 </div>
                 <div>
@@ -85,14 +85,14 @@ export default function InstituteHighlights() {
         {/* Vision & Mission Cards */}
         <div className="grid md:grid-cols-2 gap-8">
           {/* Vision Card */}
-          <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-indigo-600 to-indigo-800 p-8 text-white shadow-2xl">
+          <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-purple-600 to-purple-800 p-8 text-white shadow-2xl">
             <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -translate-y-16 translate-x-16" />
             <div className="relative z-10">
               <div className="flex items-center mb-6">
                 <Target className="h-8 w-8 mr-4" />
                 <h3 className="text-2xl font-bold">Our Vision</h3>
               </div>
-              <p className="text-indigo-100 leading-relaxed text-lg">
+              <p className="text-purple-100 leading-relaxed text-lg">
                 To be a premier educational institution that transforms students into well-rounded 
                 individuals, equipped with knowledge, skills, and values to contribute meaningfully 
                 to society and excel in their chosen fields.
@@ -120,7 +120,7 @@ export default function InstituteHighlights() {
         {/* CTA Button */}
         <div className="text-center mt-12">
           <Link href="/about">
-            <button className="bg-gradient-to-r from-indigo-600 to-teal-600 hover:from-indigo-700 hover:to-teal-700 text-white font-semibold px-8 py-4 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1">
+            <button className="bg-gradient-to-r from-purple-600 to-teal-600 hover:from-purple-700 hover:to-teal-700 text-white font-semibold px-8 py-4 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1">
               Learn More About Us
             </button>
           </Link>

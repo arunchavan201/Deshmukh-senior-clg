@@ -87,7 +87,7 @@ export default function Banner({ banners }: BannerProps) {
                   {currentBanner.link && (
                     <Button
                       asChild
-                      className="bg-blue-600 hover:bg-blue-700 text-white"
+                      className="bg-purple-600 hover:bg-purple-700 text-white"
                     >
                       <a
                         href={currentBanner.link}
