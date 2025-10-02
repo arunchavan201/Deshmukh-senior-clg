@@ -142,23 +142,8 @@ export default function ContactPage() {
               </form>
             </CardContent>
           </Card>
-
-          <Card className="border-blue-100 shadow-lg overflow-hidden">
-            <CardContent className="p-0">
-              <div className="h-full min-h-[300px]">
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15186.013811134044!2d76.74156135!3d17.937091199999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcf4166f8287605%3A0xec1001da3d0dfc40!2sDESHMUKH%20COLLEGE%20OF%20PHARMACY%20KASAR%20SIRSI!5e0!3m2!1sen!2sin!4v1701840230740!5m2!1sen!2sin"
-                  width="100%"
-                  height="100%"
-                  style={{ border: 0, minHeight: "300px" }}
-                  allowFullScreen
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  title="Deshmukh College Of Pharmacy"
-                ></iframe>
-              </div>
-            </CardContent>
-          </Card>
+//hi
+          
         </div>
 
         <Card className="border-blue-100 shadow-lg">
