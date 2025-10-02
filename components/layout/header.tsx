@@ -67,7 +67,7 @@ export default function Header() {
 		<>
 			{/* Top contact info bar */}
 			<div className="w-full bg-purple-600 text-white text-center py-2 text-sm">
-				<span>Kasarsirsi, Tal. Nilanga, Dist. Latur | +91 9975469123 | deshmukhcollege@gmail.com</span>
+				<span>Kasarsirsi, Tal. Nilanga, Dist. Latur | +91 9975469123 | 972deshmukhsenior@gmail.com</span>
 			</div>
 			
 			<div className="container mx-auto px-4 py-4">
